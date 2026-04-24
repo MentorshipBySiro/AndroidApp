@@ -1,5 +1,5 @@
 
-import com.google.samples.apps.nowinandroid.core.network.demo.DemoAssetManager
+import com.swahilib.core.network.demo.DemoAssetManager
 import java.io.File
 import java.io.InputStream
 import java.util.Properties

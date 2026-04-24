@@ -1,13 +1,13 @@
 
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
-    alias(libs.plugins.nowinandroid.android.room)
-    alias(libs.plugins.nowinandroid.hilt)
+    alias(libs.plugins.swahilib.android.library)
+    alias(libs.plugins.swahilib.android.library.jacoco)
+    alias(libs.plugins.swahilib.android.room)
+    alias(libs.plugins.swahilib.hilt)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.core.database"
+    namespace = "com.swahilib.core.database"
 }
 
 dependencies {

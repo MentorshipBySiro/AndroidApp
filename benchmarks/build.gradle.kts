@@ -1,12 +1,12 @@
-import com.google.samples.apps.nowinandroid.configureFlavors
+import com.swahilib.configureFlavors
 
 plugins {
     alias(libs.plugins.baselineprofile)
-    alias(libs.plugins.nowinandroid.android.test)
+    alias(libs.plugins.swahilib.android.test)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.benchmarks"
+    namespace = "com.swahilib.benchmarks"
 
     defaultConfig {
         minSdk = 28

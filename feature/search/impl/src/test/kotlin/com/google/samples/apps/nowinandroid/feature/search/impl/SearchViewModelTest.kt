@@ -1,21 +1,21 @@
 
-package com.google.samples.apps.nowinandroid.feature.search.impl
+package com.swahilib.feature.search.impl
 
 import androidx.lifecycle.SavedStateHandle
-import com.google.samples.apps.nowinandroid.core.analytics.NoOpAnalyticsHelper
-import com.google.samples.apps.nowinandroid.core.domain.GetRecentSearchQueriesUseCase
-import com.google.samples.apps.nowinandroid.core.domain.GetSearchContentsUseCase
-import com.google.samples.apps.nowinandroid.core.testing.data.newsResourcesTestData
-import com.google.samples.apps.nowinandroid.core.testing.data.topicsTestData
-import com.google.samples.apps.nowinandroid.core.testing.repository.TestRecentSearchRepository
-import com.google.samples.apps.nowinandroid.core.testing.repository.TestSearchContentsRepository
-import com.google.samples.apps.nowinandroid.core.testing.repository.TestUserDataRepository
-import com.google.samples.apps.nowinandroid.core.testing.repository.emptyUserData
-import com.google.samples.apps.nowinandroid.core.testing.util.MainDispatcherRule
-import com.google.samples.apps.nowinandroid.feature.search.impl.RecentSearchQueriesUiState.Success
-import com.google.samples.apps.nowinandroid.feature.search.impl.SearchResultUiState.EmptyQuery
-import com.google.samples.apps.nowinandroid.feature.search.impl.SearchResultUiState.Loading
-import com.google.samples.apps.nowinandroid.feature.search.impl.SearchResultUiState.SearchNotReady
+import com.swahilib.core.analytics.NoOpAnalyticsHelper
+import com.swahilib.core.domain.GetRecentSearchQueriesUseCase
+import com.swahilib.core.domain.GetSearchContentsUseCase
+import com.swahilib.core.testing.data.newsResourcesTestData
+import com.swahilib.core.testing.data.topicsTestData
+import com.swahilib.core.testing.repository.TestRecentSearchRepository
+import com.swahilib.core.testing.repository.TestSearchContentsRepository
+import com.swahilib.core.testing.repository.TestUserDataRepository
+import com.swahilib.core.testing.repository.emptyUserData
+import com.swahilib.core.testing.util.MainDispatcherRule
+import com.swahilib.feature.search.impl.RecentSearchQueriesUiState.Success
+import com.swahilib.feature.search.impl.SearchResultUiState.EmptyQuery
+import com.swahilib.feature.search.impl.SearchResultUiState.Loading
+import com.swahilib.feature.search.impl.SearchResultUiState.SearchNotReady
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch

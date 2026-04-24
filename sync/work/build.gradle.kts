@@ -1,14 +1,14 @@
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
-    alias(libs.plugins.nowinandroid.hilt)
+    alias(libs.plugins.swahilib.android.library)
+    alias(libs.plugins.swahilib.android.library.jacoco)
+    alias(libs.plugins.swahilib.hilt)
 }
 
 android {
     defaultConfig {
-        testInstrumentationRunner = "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
+        testInstrumentationRunner = "com.swahilib.core.testing.NiaTestRunner"
     }
-    namespace = "com.google.samples.apps.nowinandroid.sync"
+    namespace = "com.swahilib.sync"
 }
 
 dependencies {

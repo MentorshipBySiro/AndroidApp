@@ -1,5 +1,5 @@
 
-package com.google.samples.apps.nowinandroid.core.common.result
+package com.swahilib.core.common.result
 
 import app.cash.turbine.test
 import kotlinx.coroutines.flow.flow

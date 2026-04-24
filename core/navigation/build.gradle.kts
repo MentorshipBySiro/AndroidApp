@@ -1,13 +1,13 @@
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.hilt)
+    alias(libs.plugins.swahilib.android.library)
+    alias(libs.plugins.swahilib.hilt)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.compose)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.core.navigation"
+    namespace = "com.swahilib.core.navigation"
 }
 
 dependencies {

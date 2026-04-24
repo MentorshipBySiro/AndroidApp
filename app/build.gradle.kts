@@ -1,12 +1,12 @@
-import com.google.samples.apps.nowinandroid.NiaBuildType
+import com.swahilib.NiaBuildType
 
 plugins {
-    alias(libs.plugins.nowinandroid.android.application)
-    alias(libs.plugins.nowinandroid.android.application.compose)
-    alias(libs.plugins.nowinandroid.android.application.flavors)
-    alias(libs.plugins.nowinandroid.android.application.jacoco)
-    alias(libs.plugins.nowinandroid.android.application.firebase)
-    alias(libs.plugins.nowinandroid.hilt)
+    alias(libs.plugins.swahilib.android.application)
+    alias(libs.plugins.swahilib.android.application.compose)
+    alias(libs.plugins.swahilib.android.application.flavors)
+    alias(libs.plugins.swahilib.android.application.jacoco)
+    alias(libs.plugins.swahilib.android.application.firebase)
+    alias(libs.plugins.swahilib.hilt)
     alias(libs.plugins.google.osslicenses)
     alias(libs.plugins.baselineprofile)
     alias(libs.plugins.roborazzi)
@@ -15,12 +15,12 @@ plugins {
 
 android {
     defaultConfig {
-        applicationId = "com.google.samples.apps.nowinandroid"
+        applicationId = "com.swahilib"
         versionCode = 8
         versionName = "0.1.2" // X.Y.Z; X = Major, Y = minor, Z = Patch level
 
         // Custom test runner to set up Hilt dependency graph
-        testInstrumentationRunner = "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
+        testInstrumentationRunner = "com.swahilib.core.testing.NiaTestRunner"
     }
 
     buildTypes {
@@ -49,7 +49,7 @@ android {
         }
     }
     testOptions.unitTests.isIncludeAndroidResources = true
-    namespace = "com.google.samples.apps.nowinandroid"
+    namespace = "com.swahilib"
 }
 
 dependencies {

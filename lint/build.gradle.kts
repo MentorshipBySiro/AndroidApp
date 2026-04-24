@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     `java-library`
     kotlin("jvm")
-    alias(libs.plugins.nowinandroid.android.lint)
+    alias(libs.plugins.swahilib.android.lint)
 }
 
 java {

@@ -3,9 +3,9 @@ import java.io.StringReader
 import java.util.Properties
 
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
-    alias(libs.plugins.nowinandroid.hilt)
+    alias(libs.plugins.swahilib.android.library)
+    alias(libs.plugins.swahilib.android.library.jacoco)
+    alias(libs.plugins.swahilib.hilt)
     id("kotlinx-serialization")
 }
 
@@ -13,7 +13,7 @@ android {
     buildFeatures {
         buildConfig = true
     }
-    namespace = "com.google.samples.apps.nowinandroid.core.network"
+    namespace = "com.swahilib.core.network"
     testOptions.unitTests.isIncludeAndroidResources = true
 }
 

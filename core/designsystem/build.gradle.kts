@@ -1,12 +1,12 @@
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.android.library.compose)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
+    alias(libs.plugins.swahilib.android.library)
+    alias(libs.plugins.swahilib.android.library.compose)
+    alias(libs.plugins.swahilib.android.library.jacoco)
     alias(libs.plugins.roborazzi)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.core.designsystem"
+    namespace = "com.swahilib.core.designsystem"
     testOptions.unitTests.isIncludeAndroidResources = true
 }
 

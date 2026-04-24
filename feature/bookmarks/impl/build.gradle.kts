@@ -1,10 +1,10 @@
 plugins {
-    alias(libs.plugins.nowinandroid.android.feature.impl)
-    alias(libs.plugins.nowinandroid.android.library.compose)
+    alias(libs.plugins.swahilib.android.feature.impl)
+    alias(libs.plugins.swahilib.android.library.compose)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.feature.bookmarks.impl"
+    namespace = "com.swahilib.feature.bookmarks.impl"
 }
 
 dependencies {

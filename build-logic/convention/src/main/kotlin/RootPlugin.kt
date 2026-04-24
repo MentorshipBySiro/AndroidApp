@@ -1,6 +1,6 @@
 
-import com.google.samples.apps.nowinandroid.configureGraphTasks
-import com.google.samples.apps.nowinandroid.configureSpotlessForRootProject
+import com.swahilib.configureGraphTasks
+import com.swahilib.configureSpotlessForRootProject
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.configuration.BuildFeatures

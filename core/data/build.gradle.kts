@@ -1,12 +1,12 @@
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
-    alias(libs.plugins.nowinandroid.hilt)
+    alias(libs.plugins.swahilib.android.library)
+    alias(libs.plugins.swahilib.android.library.jacoco)
+    alias(libs.plugins.swahilib.hilt)
     id("kotlinx-serialization")
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.core.data"
+    namespace = "com.swahilib.core.data"
     testOptions.unitTests.isIncludeAndroidResources = true
 }
 

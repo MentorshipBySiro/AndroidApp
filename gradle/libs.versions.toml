@@ -196,19 +196,19 @@ room = { id = "androidx.room", version.ref = "room" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 
 # Plugins defined by this project
-nowinandroid-android-application = { id = "nowinandroid.android.application" }
-nowinandroid-android-application-compose = { id = "nowinandroid.android.application.compose" }
-nowinandroid-android-application-firebase = { id = "nowinandroid.android.application.firebase" }
-nowinandroid-android-application-flavors = { id = "nowinandroid.android.application.flavors" }
-nowinandroid-android-application-jacoco = { id = "nowinandroid.android.application.jacoco" }
-nowinandroid-android-feature-impl = { id = "nowinandroid.android.feature.impl" }
-nowinandroid-android-feature-api = { id = "nowinandroid.android.feature.api" }
-nowinandroid-android-library = { id = "nowinandroid.android.library" }
-nowinandroid-android-library-compose = { id = "nowinandroid.android.library.compose" }
-nowinandroid-android-library-jacoco = { id = "nowinandroid.android.library.jacoco" }
-nowinandroid-android-lint = { id = "nowinandroid.android.lint" }
-nowinandroid-android-room = { id = "nowinandroid.android.room" }
-nowinandroid-android-test = { id = "nowinandroid.android.test" }
-nowinandroid-hilt = { id = "nowinandroid.hilt" }
-nowinandroid-jvm-library = { id = "nowinandroid.jvm.library" }
-nowinandroid-root = { id = "nowinandroid.root" }
+swahilib-android-application = { id = "swahilib.android.application" }
+swahilib-android-application-compose = { id = "swahilib.android.application.compose" }
+swahilib-android-application-firebase = { id = "swahilib.android.application.firebase" }
+swahilib-android-application-flavors = { id = "swahilib.android.application.flavors" }
+swahilib-android-application-jacoco = { id = "swahilib.android.application.jacoco" }
+swahilib-android-feature-impl = { id = "swahilib.android.feature.impl" }
+swahilib-android-feature-api = { id = "swahilib.android.feature.api" }
+swahilib-android-library = { id = "swahilib.android.library" }
+swahilib-android-library-compose = { id = "swahilib.android.library.compose" }
+swahilib-android-library-jacoco = { id = "swahilib.android.library.jacoco" }
+swahilib-android-lint = { id = "swahilib.android.lint" }
+swahilib-android-room = { id = "swahilib.android.room" }
+swahilib-android-test = { id = "swahilib.android.test" }
+swahilib-hilt = { id = "swahilib.hilt" }
+swahilib-jvm-library = { id = "swahilib.jvm.library" }
+swahilib-root = { id = "swahilib.root" }

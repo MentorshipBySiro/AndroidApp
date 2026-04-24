@@ -1,10 +1,10 @@
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.hilt)
+    alias(libs.plugins.swahilib.android.library)
+    alias(libs.plugins.swahilib.hilt)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.core.data.test"
+    namespace = "com.swahilib.core.data.test"
 }
 
 dependencies {

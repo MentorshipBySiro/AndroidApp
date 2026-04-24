@@ -1,12 +1,12 @@
 
-package com.google.samples.apps.nowinandroid.feature.settings.impl
+package com.swahilib.feature.settings.impl
 
-import com.google.samples.apps.nowinandroid.core.model.data.DarkThemeConfig.DARK
-import com.google.samples.apps.nowinandroid.core.model.data.ThemeBrand.ANDROID
-import com.google.samples.apps.nowinandroid.core.testing.repository.TestUserDataRepository
-import com.google.samples.apps.nowinandroid.core.testing.util.MainDispatcherRule
-import com.google.samples.apps.nowinandroid.feature.settings.impl.SettingsUiState.Loading
-import com.google.samples.apps.nowinandroid.feature.settings.impl.SettingsUiState.Success
+import com.swahilib.core.model.data.DarkThemeConfig.DARK
+import com.swahilib.core.model.data.ThemeBrand.ANDROID
+import com.swahilib.core.testing.repository.TestUserDataRepository
+import com.swahilib.core.testing.util.MainDispatcherRule
+import com.swahilib.feature.settings.impl.SettingsUiState.Loading
+import com.swahilib.feature.settings.impl.SettingsUiState.Success
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.UnconfinedTestDispatcher

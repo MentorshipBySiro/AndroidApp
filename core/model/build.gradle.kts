@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.nowinandroid.jvm.library)
+    alias(libs.plugins.swahilib.jvm.library)
 }
 
 dependencies {

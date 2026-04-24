@@ -1,11 +1,11 @@
 plugins {
-    alias(libs.plugins.nowinandroid.android.feature.impl)
-    alias(libs.plugins.nowinandroid.android.library.compose)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
+    alias(libs.plugins.swahilib.android.feature.impl)
+    alias(libs.plugins.swahilib.android.library.compose)
+    alias(libs.plugins.swahilib.android.library.jacoco)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.feature.topic.impl"
+    namespace = "com.swahilib.feature.topic.impl"
 }
 
 dependencies {

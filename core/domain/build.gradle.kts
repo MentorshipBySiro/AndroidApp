@@ -1,11 +1,11 @@
 plugins {
-    alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.android.library.jacoco)
+    alias(libs.plugins.swahilib.android.library)
+    alias(libs.plugins.swahilib.android.library.jacoco)
     id("com.google.devtools.ksp")
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.core.domain"
+    namespace = "com.swahilib.core.domain"
 }
 
 dependencies {

@@ -1,14 +1,14 @@
-import com.google.samples.apps.nowinandroid.FlavorDimension
-import com.google.samples.apps.nowinandroid.NiaFlavor
+import com.swahilib.FlavorDimension
+import com.swahilib.NiaFlavor
 
 plugins {
-    alias(libs.plugins.nowinandroid.android.application)
-    alias(libs.plugins.nowinandroid.android.application.compose)
+    alias(libs.plugins.swahilib.android.application)
+    alias(libs.plugins.swahilib.android.application.compose)
 }
 
 android {
     defaultConfig {
-        applicationId = "com.google.samples.apps.niacatalog"
+        applicationId = "com.niacatalog"
         versionCode = 1
         versionName = "0.0.1" // X.Y.Z; X = Major, Y = minor, Z = Patch level
 
@@ -22,7 +22,7 @@ android {
             excludes.add("/META-INF/{AL2.0,LGPL2.1}")
         }
     }
-    namespace = "com.google.samples.apps.niacatalog"
+    namespace = "com.niacatalog"
 
     buildTypes {
         release {

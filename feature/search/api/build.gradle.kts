@@ -1,9 +1,9 @@
 plugins {
-    alias(libs.plugins.nowinandroid.android.feature.api)
+    alias(libs.plugins.swahilib.android.feature.api)
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.feature.search.api"
+    namespace = "com.swahilib.feature.search.api"
 }
 
 dependencies {

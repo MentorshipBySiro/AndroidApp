@@ -7,7 +7,7 @@ import org.gradle.kotlin.dsl.dependencies
 class AndroidFeatureApiConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            apply(plugin = "nowinandroid.android.library")
+            apply(plugin = "swahilib.android.library")
             apply(plugin = "org.jetbrains.kotlin.plugin.serialization")
 
             dependencies {

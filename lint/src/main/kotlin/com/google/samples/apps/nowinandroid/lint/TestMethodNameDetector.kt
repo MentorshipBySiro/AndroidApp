@@ -1,5 +1,5 @@
 
-package com.google.samples.apps.nowinandroid.lint
+package com.swahilib.lint
 
 import com.android.tools.lint.detector.api.AnnotationInfo
 import com.android.tools.lint.detector.api.AnnotationUsageInfo

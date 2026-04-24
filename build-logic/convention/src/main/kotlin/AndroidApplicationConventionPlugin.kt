@@ -1,11 +1,11 @@
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.google.samples.apps.nowinandroid.configureBadgingTasks
-import com.google.samples.apps.nowinandroid.configureGradleManagedDevices
-import com.google.samples.apps.nowinandroid.configureKotlinAndroid
-import com.google.samples.apps.nowinandroid.configurePrintApksTask
-import com.google.samples.apps.nowinandroid.configureSpotlessForAndroid
+import com.swahilib.configureBadgingTasks
+import com.swahilib.configureGradleManagedDevices
+import com.swahilib.configureKotlinAndroid
+import com.swahilib.configurePrintApksTask
+import com.swahilib.configureSpotlessForAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -15,7 +15,7 @@ abstract class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             apply(plugin = "com.android.application")
-            apply(plugin = "nowinandroid.android.lint")
+            apply(plugin = "swahilib.android.lint")
             apply(plugin = "com.dropbox.dependency-guard")
 
             extensions.configure<ApplicationExtension> {
