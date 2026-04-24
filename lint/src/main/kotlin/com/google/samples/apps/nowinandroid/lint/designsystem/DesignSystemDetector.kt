@@ -15,7 +15,7 @@ import org.jetbrains.uast.UQualifiedReferenceExpression
 
 /**
  * A detector that checks for incorrect usages of Compose Material APIs over equivalents in
- * the Now in Android design system module.
+ * the SwahiLib design system module.
  */
 class DesignSystemDetector : Detector(), Detector.UastScanner {
 
@@ -45,7 +45,7 @@ class DesignSystemDetector : Detector(), Detector.UastScanner {
             id = "DesignSystem",
             briefDescription = "Design system",
             explanation = "This check highlights calls in code that use Compose Material " +
-                "composables instead of equivalents from the Now in Android design system " +
+                "composables instead of equivalents from the SwahiLib design system " +
                 "module.",
             category = Category.CUSTOM_LINT_CHECKS,
             priority = 7,

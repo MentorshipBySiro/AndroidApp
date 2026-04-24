@@ -19,8 +19,8 @@ class NiaIssueRegistry : IssueRegistry() {
     override val minApi: Int = 12
 
     override val vendor: Vendor = Vendor(
-        vendorName = "Now in Android",
-        feedbackUrl = "https://github.com/android/swahilib/issues",
-        contact = "https://github.com/android/swahilib",
+        vendorName = "SwahiLib",
+        feedbackUrl = "https://github.com/SiroDevs/SwahiLib-Android/issues",
+        contact = "https://github.com/SiroDevs/SwahiLib-Android",
     )
 }

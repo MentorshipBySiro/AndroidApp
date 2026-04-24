@@ -13,7 +13,7 @@ import com.swahilib.core.designsystem.icon.NiaIcons
 import com.swahilib.core.designsystem.theme.NiaTheme
 
 /**
- * Now in Android toggle button with icon and checked icon content slots. Wraps Material 3
+ * SwahiLib toggle button with icon and checked icon content slots. Wraps Material 3
  * [IconButton].
  *
  * @param checked Whether the toggle button is currently checked.
@@ -103,7 +103,7 @@ fun IconButtonPreviewUnchecked() {
 }
 
 /**
- * Now in Android icon button default values.
+ * SwahiLib icon button default values.
  */
 object NiaIconButtonDefaults {
     // TODO: File bug

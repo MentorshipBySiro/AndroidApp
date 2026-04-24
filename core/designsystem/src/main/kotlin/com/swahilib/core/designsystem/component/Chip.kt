@@ -17,7 +17,7 @@ import com.swahilib.core.designsystem.icon.NiaIcons
 import com.swahilib.core.designsystem.theme.NiaTheme
 
 /**
- * Now in Android filter chip with included leading checked icon as well as text content slot.
+ * SwahiLib filter chip with included leading checked icon as well as text content slot.
  *
  * @param selected Whether the chip is currently checked.
  * @param onSelectedChange Called when the user clicks the chip and toggles checked.
@@ -104,7 +104,7 @@ fun ChipPreview() {
 }
 
 /**
- * Now in Android chip default values.
+ * SwahiLib chip default values.
  */
 object NiaChipDefaults {
     // TODO: File bug

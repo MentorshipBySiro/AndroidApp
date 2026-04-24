@@ -20,7 +20,7 @@ import com.swahilib.core.designsystem.icon.NiaIcons
 import com.swahilib.core.designsystem.theme.NiaTheme
 
 /**
- * Now in Android view toggle button with included trailing icon as well as compact and expanded
+ * SwahiLib view toggle button with included trailing icon as well as compact and expanded
  * text label content slots.
  *
  * @param expanded Whether the view toggle is currently in expanded mode or compact mode.
@@ -62,7 +62,7 @@ fun NiaViewToggleButton(
 }
 
 /**
- * Internal Now in Android view toggle button content layout for arranging the text label and
+ * Internal SwahiLib view toggle button content layout for arranging the text label and
  * trailing icon.
  *
  * @param text The button text label content.
@@ -125,7 +125,7 @@ fun ViewTogglePreviewCompact() {
 }
 
 /**
- * Now in Android view toggle default values.
+ * SwahiLib view toggle default values.
  */
 object NiaViewToggleDefaults {
     // TODO: File bug

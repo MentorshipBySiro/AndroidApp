@@ -12,7 +12,7 @@ import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.unit.sp
 
 /**
- * Now in Android typography.
+ * SwahiLib typography.
  */
 internal val NiaTypography = Typography(
     displayLarge = TextStyle(

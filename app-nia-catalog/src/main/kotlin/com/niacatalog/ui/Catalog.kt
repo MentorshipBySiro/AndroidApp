@@ -38,7 +38,7 @@ import com.swahilib.core.designsystem.icon.NiaIcons
 import com.swahilib.core.designsystem.theme.NiaTheme
 
 /**
- * Now in Android component catalog.
+ * SwahiLib component catalog.
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

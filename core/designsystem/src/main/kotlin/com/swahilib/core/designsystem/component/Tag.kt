@@ -57,7 +57,7 @@ fun TagPreview() {
 }
 
 /**
- * Now in Android tag default values.
+ * SwahiLib tag default values.
  */
 object NiaTagDefaults {
     const val UNFOLLOWED_TOPIC_TAG_CONTAINER_ALPHA = 0.5f

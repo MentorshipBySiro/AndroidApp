@@ -22,7 +22,7 @@ import com.swahilib.core.designsystem.icon.NiaIcons
 import com.swahilib.core.designsystem.theme.NiaTheme
 
 /**
- * Now in Android filled button with generic content slot. Wraps Material 3 [Button].
+ * SwahiLib filled button with generic content slot. Wraps Material 3 [Button].
  *
  * @param onClick Will be called when the user clicks the button.
  * @param modifier Modifier to be applied to the button.
@@ -53,7 +53,7 @@ fun NiaButton(
 }
 
 /**
- * Now in Android filled button with text and icon content slots.
+ * SwahiLib filled button with text and icon content slots.
  *
  * @param onClick Will be called when the user clicks the button.
  * @param modifier Modifier to be applied to the button.
@@ -88,7 +88,7 @@ fun NiaButton(
 }
 
 /**
- * Now in Android outlined button with generic content slot. Wraps Material 3 [OutlinedButton].
+ * SwahiLib outlined button with generic content slot. Wraps Material 3 [OutlinedButton].
  *
  * @param onClick Will be called when the user clicks the button.
  * @param modifier Modifier to be applied to the button.
@@ -129,7 +129,7 @@ fun NiaOutlinedButton(
 }
 
 /**
- * Now in Android outlined button with text and icon content slots.
+ * SwahiLib outlined button with text and icon content slots.
  *
  * @param onClick Will be called when the user clicks the button.
  * @param modifier Modifier to be applied to the button.
@@ -164,7 +164,7 @@ fun NiaOutlinedButton(
 }
 
 /**
- * Now in Android text button with generic content slot. Wraps Material 3 [TextButton].
+ * SwahiLib text button with generic content slot. Wraps Material 3 [TextButton].
  *
  * @param onClick Will be called when the user clicks the button.
  * @param modifier Modifier to be applied to the button.
@@ -191,7 +191,7 @@ fun NiaTextButton(
 }
 
 /**
- * Now in Android text button with text and icon content slots.
+ * SwahiLib text button with text and icon content slots.
  *
  * @param onClick Will be called when the user clicks the button.
  * @param modifier Modifier to be applied to the button.
@@ -221,7 +221,7 @@ fun NiaTextButton(
 }
 
 /**
- * Internal Now in Android button content layout for arranging the text label and leading icon.
+ * Internal SwahiLib button content layout for arranging the text label and leading icon.
  *
  * @param text The button text label content.
  * @param leadingIcon The button leading icon content. Default is `null` for no leading icon.Ï
@@ -285,7 +285,7 @@ fun NiaButtonLeadingIconPreview() {
 }
 
 /**
- * Now in Android button default values.
+ * SwahiLib button default values.
  */
 object NiaButtonDefaults {
     // TODO: File bug

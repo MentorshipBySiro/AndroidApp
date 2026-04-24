@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-import "com/google/samples/apps/swahilib/data/dark_theme_config.proto";
-import "com/google/samples/apps/swahilib/data/theme_brand.proto";
+import "com/swahilib/data/dark_theme_config.proto";
+import "com/swahilib/data/theme_brand.proto";
 
 option java_package = "com.swahilib.core.datastore";
 option java_multiple_files = true;
