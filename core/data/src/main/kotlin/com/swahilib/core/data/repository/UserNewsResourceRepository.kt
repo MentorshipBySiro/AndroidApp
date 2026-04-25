@@ -1,4 +1,3 @@
-
 package com.swahilib.core.data.repository
 
 import com.swahilib.core.model.data.UserNewsResource

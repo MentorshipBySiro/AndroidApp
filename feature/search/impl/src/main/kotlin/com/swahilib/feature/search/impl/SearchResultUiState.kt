@@ -1,4 +1,3 @@
-
 package com.swahilib.feature.search.impl
 
 import com.swahilib.core.model.data.FollowableTopic

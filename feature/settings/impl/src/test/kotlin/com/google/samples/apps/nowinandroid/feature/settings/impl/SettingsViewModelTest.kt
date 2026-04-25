@@ -1,4 +1,3 @@
-
 package com.swahilib.feature.settings.impl
 
 import com.swahilib.core.model.data.DarkThemeConfig.DARK

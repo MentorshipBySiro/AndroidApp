@@ -1,16 +1,15 @@
-
 package com.swahilib.core.database.dao
 
 import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
-import com.swahilib.core.database.NiaDatabase
+import com.swahilib.core.database.AppDatabase
 import org.junit.After
 import org.junit.Before
 
 internal abstract class DatabaseTest {
 
-    private lateinit var db: NiaDatabase
+    private lateinit var db: AppDatabase
     protected lateinit var newsResourceDao: NewsResourceDao
     protected lateinit var topicDao: TopicDao
 
@@ -20,7 +19,7 @@ internal abstract class DatabaseTest {
             val context = ApplicationProvider.getApplicationContext<Context>()
             Room.inMemoryDatabaseBuilder(
                 context,
-                NiaDatabase::class.java,
+                AppDatabase::class.java,
             ).build()
         }
         newsResourceDao = db.newsResourceDao()

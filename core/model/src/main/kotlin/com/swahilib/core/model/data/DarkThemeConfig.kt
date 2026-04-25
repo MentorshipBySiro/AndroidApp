@@ -1,4 +1,3 @@
-
 package com.swahilib.core.model.data
 
 enum class DarkThemeConfig {

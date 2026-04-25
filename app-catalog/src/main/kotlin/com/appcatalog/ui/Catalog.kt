@@ -1,4 +1,3 @@
-
 package com.appcatalog.ui
 
 import androidx.compose.foundation.layout.Arrangement

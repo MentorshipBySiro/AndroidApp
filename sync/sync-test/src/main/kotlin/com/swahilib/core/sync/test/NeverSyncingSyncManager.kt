@@ -1,4 +1,3 @@
-
 package com.swahilib.core.sync.test
 
 import com.swahilib.core.data.util.SyncManager

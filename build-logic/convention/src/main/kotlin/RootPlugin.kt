@@ -1,4 +1,3 @@
-
 import com.swahilib.configureGraphTasks
 import com.swahilib.configureSpotlessForRootProject
 import org.gradle.api.Plugin

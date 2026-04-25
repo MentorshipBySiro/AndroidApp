@@ -1,4 +1,3 @@
-
 import com.android.build.api.dsl.LibraryExtension
 import com.swahilib.configureGradleManagedDevices
 import com.swahilib.libs

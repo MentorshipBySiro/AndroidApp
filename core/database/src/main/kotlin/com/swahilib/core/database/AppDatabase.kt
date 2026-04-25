@@ -1,4 +1,3 @@
-
 package com.swahilib.core.database
 
 import androidx.room.AutoMigration
@@ -48,7 +47,7 @@ import com.swahilib.core.database.util.InstantConverter
 @TypeConverters(
     InstantConverter::class,
 )
-internal abstract class NiaDatabase : RoomDatabase() {
+internal abstract class AppDatabase : RoomDatabase() {
     abstract fun topicDao(): TopicDao
     abstract fun newsResourceDao(): NewsResourceDao
     abstract fun topicFtsDao(): TopicFtsDao

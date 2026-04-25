@@ -1,4 +1,3 @@
-
 package com.swahilib.core.data.testdoubles
 
 import com.swahilib.core.database.dao.TopicDao

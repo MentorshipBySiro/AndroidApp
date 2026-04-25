@@ -1,4 +1,3 @@
-
 package com.swahilib
 
 import com.diffplug.gradle.spotless.SpotlessExtension

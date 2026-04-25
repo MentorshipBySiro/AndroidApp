@@ -1,4 +1,3 @@
-
 package com.swahilib.feature.bookmarks.impl.navigation
 
 import androidx.compose.material3.SnackbarDuration.Short

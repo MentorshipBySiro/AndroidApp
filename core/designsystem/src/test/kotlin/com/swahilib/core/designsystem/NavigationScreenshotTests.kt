@@ -1,4 +1,3 @@
-
 package com.swahilib.core.designsystem
 
 import androidx.activity.ComponentActivity

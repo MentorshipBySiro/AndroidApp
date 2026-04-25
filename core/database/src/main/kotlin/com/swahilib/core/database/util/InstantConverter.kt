@@ -1,4 +1,3 @@
-
 package com.swahilib.core.database.util
 
 import androidx.room.TypeConverter

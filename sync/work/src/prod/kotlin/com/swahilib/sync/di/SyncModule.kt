@@ -1,4 +1,3 @@
-
 package com.swahilib.sync.di
 
 import com.google.firebase.Firebase

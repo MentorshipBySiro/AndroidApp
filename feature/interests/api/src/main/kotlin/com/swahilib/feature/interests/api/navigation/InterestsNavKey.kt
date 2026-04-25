@@ -1,4 +1,3 @@
-
 package com.swahilib.feature.interests.api.navigation
 
 import androidx.navigation3.runtime.NavKey

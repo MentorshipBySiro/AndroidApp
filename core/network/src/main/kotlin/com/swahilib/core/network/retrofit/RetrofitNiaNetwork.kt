@@ -1,4 +1,3 @@
-
 package com.swahilib.core.network.retrofit
 
 import androidx.tracing.trace
@@ -19,7 +18,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
- * Retrofit API declaration for NIA Network API
+ * Retrofit API declaration for App Network API
  */
 private interface RetrofitNiaNetworkApi {
     @GET(value = "topics")
@@ -43,10 +42,10 @@ private interface RetrofitNiaNetworkApi {
     ): List<NetworkChangeList>
 }
 
-private const val NIA_BASE_URL = BuildConfig.BACKEND_URL
+private const val APP_BASE_URL = BuildConfig.BACKEND_URL
 
 /**
- * Wrapper for data provided from the [NIA_BASE_URL]
+ * Wrapper for data provided from the [APP_BASE_URL]
  */
 @Serializable
 private data class NetworkResponse<T>(
@@ -64,7 +63,7 @@ internal class RetrofitNiaNetwork @Inject constructor(
 
     private val networkApi = trace("RetrofitNiaNetwork") {
         Retrofit.Builder()
-            .baseUrl(NIA_BASE_URL)
+            .baseUrl(APP_BASE_URL)
             // We use callFactory lambda here with dagger.Lazy<Call.Factory>
             // to prevent initializing OkHttp on the main thread.
             .callFactory { okhttpCallFactory.get().newCall(it) }

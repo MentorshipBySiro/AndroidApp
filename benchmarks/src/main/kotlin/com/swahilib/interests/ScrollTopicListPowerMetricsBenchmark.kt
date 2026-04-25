@@ -1,4 +1,3 @@
-
 package com.swahilib.interests
 
 import android.os.Build.VERSION_CODES

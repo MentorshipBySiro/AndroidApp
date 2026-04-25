@@ -1,4 +1,3 @@
-
 package com.swahilib.feature.topic.impl
 
 import androidx.annotation.VisibleForTesting

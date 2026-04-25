@@ -1,4 +1,3 @@
-
 package com.swahilib.core.database.dao
 
 import com.swahilib.core.database.model.NewsResourceEntity

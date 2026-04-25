@@ -1,4 +1,3 @@
-
 package com.swahilib.feature.interests.impl
 
 import androidx.activity.ComponentActivity

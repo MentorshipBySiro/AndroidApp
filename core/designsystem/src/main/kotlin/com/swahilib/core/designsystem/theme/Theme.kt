@@ -1,4 +1,3 @@
-
 package com.swahilib.core.designsystem.theme
 
 import android.os.Build

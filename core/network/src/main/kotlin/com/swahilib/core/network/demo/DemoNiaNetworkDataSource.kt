@@ -1,4 +1,3 @@
-
 package com.swahilib.core.network.demo
 
 import JvmUnitTestDemoAssetManager

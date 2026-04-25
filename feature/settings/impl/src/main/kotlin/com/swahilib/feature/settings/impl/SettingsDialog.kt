@@ -304,6 +304,6 @@ private fun PreviewSettingsDialogLoading() {
     }
 }
 
-private const val PRIVACY_POLICY_URL = "https://policies.google.com/privacy"
-private const val BRAND_GUIDELINES_URL = "https://developer.android.com/distribute/marketing-tools/brand-guidelines"
-private const val FEEDBACK_URL = "https://goo.gle/nia-app-feedback"
+private const val PRIVACY_POLICY_URL = ""
+private const val BRAND_GUIDELINES_URL = ""
+private const val FEEDBACK_URL = ""

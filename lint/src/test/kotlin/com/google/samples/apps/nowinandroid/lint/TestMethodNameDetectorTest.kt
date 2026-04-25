@@ -1,4 +1,3 @@
-
 package com.swahilib.lint
 
 import com.android.tools.lint.checks.infrastructure.TestFile

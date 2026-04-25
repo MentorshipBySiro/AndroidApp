@@ -1,4 +1,3 @@
-
 package com.swahilib.interests
 
 import androidx.benchmark.macro.CompilationMode

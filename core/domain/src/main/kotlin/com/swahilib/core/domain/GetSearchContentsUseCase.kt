@@ -1,4 +1,3 @@
-
 package com.swahilib.core.domain
 
 import com.swahilib.core.data.repository.SearchContentsRepository

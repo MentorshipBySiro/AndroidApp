@@ -1,4 +1,3 @@
-
 package com.swahilib.core.data
 
 import com.swahilib.core.model.data.DarkThemeConfig.FOLLOW_SYSTEM

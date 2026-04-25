@@ -1,4 +1,3 @@
-
 package com.swahilib.sync.initializers
 
 import android.content.Context

@@ -1,4 +1,3 @@
-
 package com.swahilib.core.database.model
 
 import androidx.room.ColumnInfo

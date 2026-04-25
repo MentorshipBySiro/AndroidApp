@@ -1,4 +1,3 @@
-
 package com.swahilib.bookmarks
 
 import androidx.benchmark.macro.MacrobenchmarkScope

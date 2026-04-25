@@ -1,4 +1,3 @@
-
 package com.swahilib.core.network.model
 
 import android.annotation.SuppressLint

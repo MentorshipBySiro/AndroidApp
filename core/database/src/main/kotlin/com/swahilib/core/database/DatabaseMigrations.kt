@@ -1,4 +1,3 @@
-
 package com.swahilib.core.database
 
 import androidx.room.DeleteColumn

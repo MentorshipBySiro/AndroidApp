@@ -1,4 +1,3 @@
-
 package com.swahilib
 
 import com.android.build.api.artifact.ScopedArtifact

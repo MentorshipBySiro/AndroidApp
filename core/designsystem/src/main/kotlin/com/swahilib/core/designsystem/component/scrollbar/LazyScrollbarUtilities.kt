@@ -1,4 +1,3 @@
-
 package com.swahilib.core.designsystem.component.scrollbar
 
 import androidx.compose.foundation.gestures.ScrollableState

@@ -1,7 +1,6 @@
-
 package com.swahilib.core.database.di
 
-import com.swahilib.core.database.NiaDatabase
+import com.swahilib.core.database.AppDatabase
 import com.swahilib.core.database.dao.NewsResourceDao
 import com.swahilib.core.database.dao.NewsResourceFtsDao
 import com.swahilib.core.database.dao.RecentSearchQueryDao
@@ -17,26 +16,26 @@ import dagger.hilt.components.SingletonComponent
 internal object DaosModule {
     @Provides
     fun providesTopicsDao(
-        database: NiaDatabase,
+        database: AppDatabase,
     ): TopicDao = database.topicDao()
 
     @Provides
     fun providesNewsResourceDao(
-        database: NiaDatabase,
+        database: AppDatabase,
     ): NewsResourceDao = database.newsResourceDao()
 
     @Provides
     fun providesTopicFtsDao(
-        database: NiaDatabase,
+        database: AppDatabase,
     ): TopicFtsDao = database.topicFtsDao()
 
     @Provides
     fun providesNewsResourceFtsDao(
-        database: NiaDatabase,
+        database: AppDatabase,
     ): NewsResourceFtsDao = database.newsResourceFtsDao()
 
     @Provides
     fun providesRecentSearchQueryDao(
-        database: NiaDatabase,
+        database: AppDatabase,
     ): RecentSearchQueryDao = database.recentSearchQueryDao()
 }

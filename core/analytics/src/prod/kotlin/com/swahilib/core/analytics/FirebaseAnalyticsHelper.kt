@@ -1,4 +1,3 @@
-
 package com.swahilib.core.analytics
 
 import com.google.firebase.analytics.FirebaseAnalytics

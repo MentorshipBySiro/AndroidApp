@@ -1,4 +1,3 @@
-
 package com.swahilib.core.designsystem.icon
 
 import androidx.compose.material.icons.Icons

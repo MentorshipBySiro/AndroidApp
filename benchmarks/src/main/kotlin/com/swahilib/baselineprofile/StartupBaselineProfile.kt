@@ -1,4 +1,3 @@
-
 package com.swahilib.baselineprofile
 
 import androidx.benchmark.macro.MacrobenchmarkScope

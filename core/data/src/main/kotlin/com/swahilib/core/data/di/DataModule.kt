@@ -1,4 +1,3 @@
-
 package com.swahilib.core.data.di
 
 import com.swahilib.core.data.repository.DefaultRecentSearchRepository

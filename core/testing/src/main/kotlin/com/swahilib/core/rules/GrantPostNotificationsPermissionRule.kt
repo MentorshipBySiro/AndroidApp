@@ -1,4 +1,3 @@
-
 package com.swahilib.core.rules
 
 import android.Manifest.permission.POST_NOTIFICATIONS

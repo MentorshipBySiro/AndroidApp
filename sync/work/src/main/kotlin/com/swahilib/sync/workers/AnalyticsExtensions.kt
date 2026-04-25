@@ -1,4 +1,3 @@
-
 package com.swahilib.sync.workers
 
 import com.swahilib.core.analytics.AnalyticsEvent

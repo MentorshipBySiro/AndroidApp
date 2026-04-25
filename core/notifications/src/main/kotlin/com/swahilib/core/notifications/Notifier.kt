@@ -1,4 +1,3 @@
-
 package com.swahilib.core.notifications
 
 import com.swahilib.core.model.data.NewsResource

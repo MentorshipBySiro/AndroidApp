@@ -1,4 +1,3 @@
-
 package com.swahilib.core.network.model
 
 import com.swahilib.core.model.data.Topic

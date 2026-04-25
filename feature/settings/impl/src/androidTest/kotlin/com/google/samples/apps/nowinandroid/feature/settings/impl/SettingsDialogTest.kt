@@ -1,4 +1,3 @@
-
 package com.swahilib.feature.settings.impl
 
 import androidx.activity.ComponentActivity

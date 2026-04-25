@@ -1,4 +1,3 @@
-
 package com.swahilib.core.database.dao
 
 import androidx.room.Dao

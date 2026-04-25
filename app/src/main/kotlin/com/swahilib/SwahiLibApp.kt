@@ -11,9 +11,6 @@ import com.swahilib.util.ProfileVerifierLogger
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
-/**
- * [Application] class for NiA
- */
 @HiltAndroidApp
 class SwahiLibApp : Application(), ImageLoaderFactory {
     @Inject

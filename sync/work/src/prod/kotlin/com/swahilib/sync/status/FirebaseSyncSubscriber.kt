@@ -1,4 +1,3 @@
-
 package com.swahilib.sync.status
 
 import com.google.firebase.messaging.FirebaseMessaging

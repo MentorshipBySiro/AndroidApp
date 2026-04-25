@@ -1,4 +1,3 @@
-
 package com.swahilib.core.designsystem.component
 
 import android.content.res.Configuration

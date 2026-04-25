@@ -1,4 +1,3 @@
-
 package com.swahilib.lint.designsystem
 
 import com.android.tools.lint.client.api.UElementHandler

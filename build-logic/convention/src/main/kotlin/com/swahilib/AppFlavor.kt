@@ -1,4 +1,3 @@
-
 package com.swahilib
 
 import com.android.build.api.dsl.ApplicationExtension
@@ -12,18 +11,15 @@ enum class FlavorDimension {
     contentType,
 }
 
-// The content for the app can either come from local static data which is useful for demo
-// purposes, or from a production backend server which supplies up-to-date, real content.
-// These two product flavors reflect this behaviour.
 @Suppress("EnumEntryName")
-enum class NiaFlavor(val dimension: FlavorDimension, val applicationIdSuffix: String? = null) {
+enum class AppFlavor(val dimension: FlavorDimension, val applicationIdSuffix: String? = null) {
     demo(FlavorDimension.contentType, applicationIdSuffix = ".demo"),
     prod(FlavorDimension.contentType),
 }
 
 fun configureFlavors(
     commonExtension: CommonExtension,
-    flavorConfigurationBlock: ProductFlavor.(flavor: NiaFlavor) -> Unit = {},
+    flavorConfigurationBlock: ProductFlavor.(flavor: AppFlavor) -> Unit = {},
 ) {
     commonExtension.apply {
         FlavorDimension.entries.forEach { flavorDimension ->
@@ -31,13 +27,13 @@ fun configureFlavors(
         }
 
         productFlavors {
-            NiaFlavor.entries.forEach { niaFlavor ->
-                register(niaFlavor.name) {
-                    dimension = niaFlavor.dimension.name
-                    flavorConfigurationBlock(this, niaFlavor)
+            AppFlavor.entries.forEach { appFlavor ->
+                register(appFlavor.name) {
+                    dimension = appFlavor.dimension.name
+                    flavorConfigurationBlock(this, appFlavor)
                     if (commonExtension is ApplicationExtension && this is ApplicationProductFlavor) {
-                        if (niaFlavor.applicationIdSuffix != null) {
-                            applicationIdSuffix = niaFlavor.applicationIdSuffix
+                        if (appFlavor.applicationIdSuffix != null) {
+                            applicationIdSuffix = appFlavor.applicationIdSuffix
                         }
                     }
                 }

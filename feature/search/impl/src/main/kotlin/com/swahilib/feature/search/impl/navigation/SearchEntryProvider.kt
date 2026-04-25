@@ -1,4 +1,3 @@
-
 package com.swahilib.feature.search.impl.navigation
 
 import androidx.navigation3.runtime.EntryProviderScope

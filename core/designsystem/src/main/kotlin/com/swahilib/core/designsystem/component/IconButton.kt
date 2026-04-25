@@ -1,4 +1,3 @@
-
 package com.swahilib.core.designsystem.component
 
 import androidx.compose.material3.FilledIconToggleButton

@@ -1,4 +1,3 @@
-
 package com.swahilib.feature.bookmarks.impl
 
 import com.swahilib.core.data.repository.CompositeUserNewsResourceRepository

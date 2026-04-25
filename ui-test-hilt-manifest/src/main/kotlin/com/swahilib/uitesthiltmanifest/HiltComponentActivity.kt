@@ -1,4 +1,3 @@
-
 package com.swahilib.uitesthiltmanifest
 
 import androidx.activity.ComponentActivity

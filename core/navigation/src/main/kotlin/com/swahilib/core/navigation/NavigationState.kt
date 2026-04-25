@@ -1,4 +1,3 @@
-
 package com.swahilib.core.navigation
 
 import androidx.annotation.VisibleForTesting

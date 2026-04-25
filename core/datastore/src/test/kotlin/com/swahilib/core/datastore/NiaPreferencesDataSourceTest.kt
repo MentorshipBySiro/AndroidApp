@@ -1,4 +1,3 @@
-
 package com.swahilib.core.datastore
 
 import com.swahilib.core.datastore.test.InMemoryDataStore

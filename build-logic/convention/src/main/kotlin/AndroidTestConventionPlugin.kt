@@ -1,4 +1,3 @@
-
 import com.android.build.api.dsl.TestExtension
 import com.swahilib.configureGradleManagedDevices
 import com.swahilib.configureKotlinAndroid

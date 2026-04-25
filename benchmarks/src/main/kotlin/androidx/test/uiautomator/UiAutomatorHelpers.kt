@@ -1,4 +1,3 @@
-
 package androidx.test.uiautomator
 
 import androidx.test.uiautomator.HasChildrenOp.AT_LEAST

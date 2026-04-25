@@ -1,4 +1,3 @@
-
 package com.swahilib.core.testing.repository
 
 import com.swahilib.core.data.model.RecentSearchQuery

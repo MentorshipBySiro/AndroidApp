@@ -1,4 +1,3 @@
-
 package com.swahilib.feature.foryou.impl
 
 import com.swahilib.core.model.data.FollowableTopic

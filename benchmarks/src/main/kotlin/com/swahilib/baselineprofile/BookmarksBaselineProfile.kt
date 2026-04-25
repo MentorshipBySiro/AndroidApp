@@ -1,4 +1,3 @@
-
 package com.swahilib.baselineprofile
 
 import androidx.benchmark.macro.junit4.BaselineProfileRule

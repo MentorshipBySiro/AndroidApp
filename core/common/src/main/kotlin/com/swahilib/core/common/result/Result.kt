@@ -1,4 +1,3 @@
-
 package com.swahilib.core.common.result
 
 import kotlinx.coroutines.flow.Flow

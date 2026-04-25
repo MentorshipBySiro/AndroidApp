@@ -1,4 +1,3 @@
-
 package com.swahilib
 
 import androidx.test.uiautomator.BySelector

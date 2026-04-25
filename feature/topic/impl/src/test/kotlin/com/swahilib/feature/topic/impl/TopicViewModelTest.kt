@@ -1,4 +1,3 @@
-
 package com.swahilib.feature.topic.impl
 
 import com.swahilib.core.data.repository.CompositeUserNewsResourceRepository

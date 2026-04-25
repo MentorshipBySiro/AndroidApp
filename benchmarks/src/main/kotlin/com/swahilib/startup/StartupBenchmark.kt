@@ -1,4 +1,3 @@
-
 package com.swahilib.startup
 
 import androidx.benchmark.macro.BaselineProfileMode.Disable

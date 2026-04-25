@@ -1,4 +1,3 @@
-
 package com.swahilib.core.testing.util
 
 import com.swahilib.core.analytics.AnalyticsEvent

@@ -1,4 +1,3 @@
-
 package com.swahilib.sync.workers
 
 import android.util.Log

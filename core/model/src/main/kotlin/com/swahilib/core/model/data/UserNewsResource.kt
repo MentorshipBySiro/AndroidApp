@@ -1,4 +1,3 @@
-
 package com.swahilib.core.model.data
 
 import kotlinx.datetime.Instant
