@@ -1,4 +1,4 @@
-import com.swahilib.NiaBuildType
+import com.swahilib.AppBuildType
 
 plugins {
     alias(libs.plugins.swahilib.android.application)
@@ -16,21 +16,19 @@ plugins {
 android {
     defaultConfig {
         applicationId = "com.swahilib"
-        versionCode = 8
-        versionName = "0.1.2" // X.Y.Z; X = Major, Y = minor, Z = Patch level
-
-        // Custom test runner to set up Hilt dependency graph
+        versionCode = 150
+        versionName = "1.0.150"
         testInstrumentationRunner = "com.swahilib.core.testing.NiaTestRunner"
     }
 
     buildTypes {
         debug {
-            applicationIdSuffix = NiaBuildType.DEBUG.applicationIdSuffix
+            applicationIdSuffix = AppBuildType.DEBUG.applicationIdSuffix
         }
         release {
             isMinifyEnabled = providers.gradleProperty("minifyWithR8")
                 .map(String::toBooleanStrict).getOrElse(true)
-            applicationIdSuffix = NiaBuildType.RELEASE.applicationIdSuffix
+            applicationIdSuffix = AppBuildType.RELEASE.applicationIdSuffix
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"),
                           "proguard-rules.pro")
 

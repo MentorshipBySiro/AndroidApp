@@ -1,13 +1,13 @@
 
-package com.niacatalog
+package com.appcatalog
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.view.WindowCompat
-import com.niacatalog.ui.NiaCatalog
+import com.appcatalog.ui.NiaCatalog
 
-class NiaCatalogActivity : ComponentActivity() {
+class AppCatalogActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

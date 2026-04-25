@@ -30,7 +30,7 @@ rootProject.name = "SwahiLib"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
-include(":app-nia-catalog")
+include(":app-catalog")
 include(":benchmarks")
 include(":core:analytics")
 include(":core:common")

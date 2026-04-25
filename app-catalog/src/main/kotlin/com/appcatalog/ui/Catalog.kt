@@ -1,5 +1,5 @@
 
-package com.niacatalog.ui
+package com.appcatalog.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
