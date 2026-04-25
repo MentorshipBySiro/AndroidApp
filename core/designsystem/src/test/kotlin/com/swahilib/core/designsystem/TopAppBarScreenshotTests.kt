@@ -10,9 +10,9 @@ import androidx.compose.ui.test.FontScale
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onRoot
 import com.github.takahirom.roborazzi.captureRoboImage
-import com.swahilib.core.designsystem.component.NiaTopAppBar
-import com.swahilib.core.designsystem.icon.NiaIcons
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.component.AppTopAppBar
+import com.swahilib.core.designsystem.icon.AppIcons
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.testing.util.DefaultRoborazziOptions
 import com.swahilib.core.testing.util.captureMultiTheme
 import dagger.hilt.android.testing.HiltTestApplication
@@ -37,7 +37,7 @@ class TopAppBarScreenshotTests {
     @Test
     fun topAppBar_multipleThemes() {
         composeTestRule.captureMultiTheme("TopAppBar") {
-            NiaTopAppBarExample()
+            AppTopAppBarExample()
         }
     }
 
@@ -50,8 +50,8 @@ class TopAppBarScreenshotTests {
                 DeviceConfigurationOverride(
                     DeviceConfigurationOverride.FontScale(2f),
                 ) {
-                    NiaTheme {
-                        NiaTopAppBarExample()
+                    AppTheme {
+                        AppTopAppBarExample()
                     }
                 }
             }
@@ -64,12 +64,12 @@ class TopAppBarScreenshotTests {
     }
 
     @Composable
-    private fun NiaTopAppBarExample() {
-        NiaTopAppBar(
+    private fun AppTopAppBarExample() {
+        AppTopAppBar(
             titleRes = android.R.string.untitled,
-            navigationIcon = NiaIcons.Search,
+            navigationIcon = AppIcons.Search,
             navigationIconContentDescription = "Navigation icon",
-            actionIcon = NiaIcons.MoreVert,
+            actionIcon = AppIcons.MoreVert,
             actionIconContentDescription = "Action icon",
         )
     }

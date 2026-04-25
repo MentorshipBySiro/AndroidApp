@@ -55,7 +55,7 @@ private fun Context.syncWorkNotification(): Notification {
         SYNC_NOTIFICATION_CHANNEL_ID,
     )
         .setSmallIcon(
-            com.swahilib.core.notifications.R.drawable.core_notifications_ic_nia_notification,
+            com.swahilib.core.notifications.R.drawable.core_notifications_ic_app_notification,
         )
         .setContentTitle(getString(R.string.sync_work_notification_title))
         .setPriority(NotificationCompat.PRIORITY_DEFAULT)

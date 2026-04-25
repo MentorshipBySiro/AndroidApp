@@ -4,8 +4,8 @@ import JvmUnitTestDemoAssetManager
 import android.os.Build.VERSION.SDK_INT
 import android.os.Build.VERSION_CODES.M
 import com.swahilib.core.common.network.Dispatcher
-import com.swahilib.core.common.network.NiaDispatchers.IO
-import com.swahilib.core.network.NiaNetworkDataSource
+import com.swahilib.core.common.network.AppDispatchers.IO
+import com.swahilib.core.network.AppNetworkDataSource
 import com.swahilib.core.network.model.NetworkChangeList
 import com.swahilib.core.network.model.NetworkNewsResource
 import com.swahilib.core.network.model.NetworkTopic
@@ -18,13 +18,13 @@ import java.io.BufferedReader
 import javax.inject.Inject
 
 /**
- * [NiaNetworkDataSource] implementation that provides static news resources to aid development
+ * [AppNetworkDataSource] implementation that provides static news resources to aid development
  */
-class DemoNiaNetworkDataSource @Inject constructor(
+class DemoAppNetworkDataSource @Inject constructor(
     @Dispatcher(IO) private val ioDispatcher: CoroutineDispatcher,
     private val networkJson: Json,
     private val assets: DemoAssetManager = JvmUnitTestDemoAssetManager,
-) : NiaNetworkDataSource {
+) : AppNetworkDataSource {
 
     override suspend fun getTopics(ids: List<String>?): List<NetworkTopic> =
         getDataFromJsonFile(TOPICS_ASSET)

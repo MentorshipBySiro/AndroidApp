@@ -10,7 +10,7 @@ import android.net.NetworkRequest.Builder
 import androidx.core.content.getSystemService
 import androidx.tracing.trace
 import com.swahilib.core.common.network.Dispatcher
-import com.swahilib.core.common.network.NiaDispatchers.IO
+import com.swahilib.core.common.network.AppDispatchers.IO
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.channels.awaitClose

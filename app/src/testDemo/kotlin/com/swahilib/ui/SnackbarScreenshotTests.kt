@@ -22,7 +22,7 @@ import com.swahilib.core.data.repository.UserNewsResourceRepository
 import com.swahilib.core.data.test.repository.FakeUserDataRepository
 import com.swahilib.core.data.util.NetworkMonitor
 import com.swahilib.core.data.util.TimeZoneMonitor
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.testing.util.DefaultRoborazziOptions
 import com.swahilib.feature.bookmarks.impl.navigation.LocalSnackbarHostState
 import com.swahilib.uitesthiltmanifest.HiltComponentActivity
@@ -179,13 +179,13 @@ class SnackbarScreenshotTests {
                     DeviceConfigurationOverride.ForcedSize(DpSize(width, height)),
                 ) {
                     BoxWithConstraints {
-                        NiaTheme {
-                            val appState = rememberNiaAppState(
+                        AppTheme {
+                            val appState = rememberAppAppState(
                                 networkMonitor = networkMonitor,
                                 userNewsResourceRepository = userNewsResourceRepository,
                                 timeZoneMonitor = timeZoneMonitor,
                             )
-                            NiaApp(
+                            MainApp(
                                 appState = appState,
                                 showSettingsDialog = false,
                                 onSettingsDismissed = {},

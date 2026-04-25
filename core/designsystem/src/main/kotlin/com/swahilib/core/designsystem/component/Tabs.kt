@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.theme.AppTheme
 
 /**
  * SwahiLib tab. Wraps Material 3 [Tab] and shifts text label down.
@@ -29,7 +29,7 @@ import com.swahilib.core.designsystem.theme.NiaTheme
  * @param text The text label content.
  */
 @Composable
-fun NiaTab(
+fun AppTab(
     selected: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -46,7 +46,7 @@ fun NiaTab(
             ProvideTextStyle(
                 value = style,
                 content = {
-                    Box(modifier = Modifier.padding(top = NiaTabDefaults.TabTopPadding)) {
+                    Box(modifier = Modifier.padding(top = AppTabDefaults.TabTopPadding)) {
                         text()
                     }
                 },
@@ -60,11 +60,11 @@ fun NiaTab(
  *
  * @param selectedTabIndex The index of the currently selected tab.
  * @param modifier Modifier to be applied to the tab row.
- * @param tabs The tabs inside this tab row. Typically this will be multiple [NiaTab]s. Each element
+ * @param tabs The tabs inside this tab row. Typically this will be multiple [AppTab]s. Each element
  * inside this lambda will be measured and placed evenly across the row, each taking up equal space.
  */
 @Composable
-fun NiaTabRow(
+fun AppTabRow(
     selectedTabIndex: Int,
     modifier: Modifier = Modifier,
     tabs: @Composable () -> Unit,
@@ -88,11 +88,11 @@ fun NiaTabRow(
 @ThemePreviews
 @Composable
 fun TabsPreview() {
-    NiaTheme {
+    AppTheme {
         val titles = listOf("Topics", "People")
-        NiaTabRow(selectedTabIndex = 0) {
+        AppTabRow(selectedTabIndex = 0) {
             titles.forEachIndexed { index, title ->
-                NiaTab(
+                AppTab(
                     selected = index == 0,
                     onClick = { },
                     text = { Text(text = title) },
@@ -102,6 +102,6 @@ fun TabsPreview() {
     }
 }
 
-object NiaTabDefaults {
+object AppTabDefaults {
     val TabTopPadding = 7.dp
 }

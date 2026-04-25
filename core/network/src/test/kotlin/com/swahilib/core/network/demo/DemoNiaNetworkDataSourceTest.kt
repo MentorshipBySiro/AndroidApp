@@ -13,15 +13,15 @@ import org.junit.Before
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class DemoNiaNetworkDataSourceTest {
+class DemoAppNetworkDataSourceTest {
 
-    private lateinit var subject: DemoNiaNetworkDataSource
+    private lateinit var subject: DemoAppNetworkDataSource
 
     private val testDispatcher = StandardTestDispatcher()
 
     @Before
     fun setUp() {
-        subject = DemoNiaNetworkDataSource(
+        subject = DemoAppNetworkDataSource(
             ioDispatcher = testDispatcher,
             networkJson = Json { ignoreUnknownKeys = true },
             assets = JvmUnitTestDemoAssetManager,

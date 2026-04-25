@@ -18,7 +18,7 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
 import androidx.test.espresso.Espresso
 import com.swahilib.core.data.repository.TopicsRepository
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.model.data.Topic
 import com.swahilib.core.navigation.Navigator
 import com.swahilib.core.navigation.rememberNavigationState
@@ -82,7 +82,7 @@ class InterestsListDetailScreenTest {
     fun expandedWidth_initialState_showsTwoPanesWithPlaceholder() {
         composeTestRule.apply {
             setContent {
-                NiaTheme {
+                AppTheme {
                     TestNavDisplay()
                 }
             }
@@ -119,7 +119,7 @@ class InterestsListDetailScreenTest {
     fun compactWidth_initialState_showsListPane() {
         composeTestRule.apply {
             setContent {
-                NiaTheme {
+                AppTheme {
                     TestNavDisplay()
                 }
             }
@@ -134,7 +134,7 @@ class InterestsListDetailScreenTest {
     fun expandedWidth_topicSelected_updatesDetailPane() {
         composeTestRule.apply {
             setContent {
-                NiaTheme {
+                AppTheme {
                     TestNavDisplay()
                 }
             }
@@ -153,7 +153,7 @@ class InterestsListDetailScreenTest {
     fun compactWidth_topicSelected_showsTopicDetailPane() {
         composeTestRule.apply {
             setContent {
-                NiaTheme {
+                AppTheme {
                     TestNavDisplay()
                 }
             }
@@ -172,7 +172,7 @@ class InterestsListDetailScreenTest {
     fun compactWidth_backPressFromTopicDetail_showsListPane() {
         composeTestRule.apply {
             setContent {
-                NiaTheme {
+                AppTheme {
                     TestNavDisplay()
                 }
             }

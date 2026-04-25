@@ -16,7 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.feature.interests.api.R
 
 @Composable
@@ -50,7 +50,7 @@ fun InterestsDetailPlaceholder(modifier: Modifier = Modifier) {
 @Preview(widthDp = 200, heightDp = 300)
 @Composable
 fun TopicDetailPlaceholderPreview() {
-    NiaTheme {
+    AppTheme {
         InterestsDetailPlaceholder()
     }
 }

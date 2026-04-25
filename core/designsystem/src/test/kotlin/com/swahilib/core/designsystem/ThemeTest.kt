@@ -24,7 +24,7 @@ import com.swahilib.core.designsystem.theme.LightDefaultColorScheme
 import com.swahilib.core.designsystem.theme.LocalBackgroundTheme
 import com.swahilib.core.designsystem.theme.LocalGradientColors
 import com.swahilib.core.designsystem.theme.LocalTintTheme
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.designsystem.theme.TintTheme
 import org.junit.Rule
 import org.junit.Test
@@ -33,7 +33,7 @@ import org.robolectric.RobolectricTestRunner
 import kotlin.test.assertEquals
 
 /**
- * Tests [NiaTheme] using different combinations of the theme mode parameters:
+ * Tests [AppTheme] using different combinations of the theme mode parameters:
  * darkTheme, disableDynamicTheming, and androidTheme.
  *
  * It verifies that the various composition locals — [MaterialTheme], [LocalGradientColors] and
@@ -49,7 +49,7 @@ class ThemeTest {
     @Test
     fun darkThemeFalse_dynamicColorFalse_androidThemeFalse() {
         composeTestRule.setContent {
-            NiaTheme(
+            AppTheme(
                 darkTheme = false,
                 disableDynamicTheming = true,
                 androidTheme = false,
@@ -69,7 +69,7 @@ class ThemeTest {
     @Test
     fun darkThemeTrue_dynamicColorFalse_androidThemeFalse() {
         composeTestRule.setContent {
-            NiaTheme(
+            AppTheme(
                 darkTheme = true,
                 disableDynamicTheming = true,
                 androidTheme = false,
@@ -89,7 +89,7 @@ class ThemeTest {
     @Test
     fun darkThemeFalse_dynamicColorTrue_androidThemeFalse() {
         composeTestRule.setContent {
-            NiaTheme(
+            AppTheme(
                 darkTheme = false,
                 disableDynamicTheming = false,
                 androidTheme = false,
@@ -109,7 +109,7 @@ class ThemeTest {
     @Test
     fun darkThemeTrue_dynamicColorTrue_androidThemeFalse() {
         composeTestRule.setContent {
-            NiaTheme(
+            AppTheme(
                 darkTheme = true,
                 disableDynamicTheming = false,
                 androidTheme = false,
@@ -129,7 +129,7 @@ class ThemeTest {
     @Test
     fun darkThemeFalse_dynamicColorFalse_androidThemeTrue() {
         composeTestRule.setContent {
-            NiaTheme(
+            AppTheme(
                 darkTheme = false,
                 disableDynamicTheming = true,
                 androidTheme = true,
@@ -149,7 +149,7 @@ class ThemeTest {
     @Test
     fun darkThemeTrue_dynamicColorFalse_androidThemeTrue() {
         composeTestRule.setContent {
-            NiaTheme(
+            AppTheme(
                 darkTheme = true,
                 disableDynamicTheming = true,
                 androidTheme = true,
@@ -169,7 +169,7 @@ class ThemeTest {
     @Test
     fun darkThemeFalse_dynamicColorTrue_androidThemeTrue() {
         composeTestRule.setContent {
-            NiaTheme(
+            AppTheme(
                 darkTheme = false,
                 disableDynamicTheming = false,
                 androidTheme = true,
@@ -189,7 +189,7 @@ class ThemeTest {
     @Test
     fun darkThemeTrue_dynamicColorTrue_androidThemeTrue() {
         composeTestRule.setContent {
-            NiaTheme(
+            AppTheme(
                 darkTheme = true,
                 disableDynamicTheming = false,
                 androidTheme = true,

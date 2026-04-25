@@ -44,12 +44,12 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.swahilib.core.designsystem.component.NiaLoadingWheel
+import com.swahilib.core.designsystem.component.AppLoadingWheel
 import com.swahilib.core.designsystem.component.scrollbar.DraggableScrollbar
 import com.swahilib.core.designsystem.component.scrollbar.rememberDraggableScroller
 import com.swahilib.core.designsystem.component.scrollbar.scrollbarState
 import com.swahilib.core.designsystem.theme.LocalTintTheme
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.model.data.UserNewsResource
 import com.swahilib.core.ui.NewsFeedUiState
 import com.swahilib.core.ui.NewsFeedUiState.Loading
@@ -135,7 +135,7 @@ internal fun BookmarksScreen(
 
 @Composable
 private fun LoadingState(modifier: Modifier = Modifier) {
-    NiaLoadingWheel(
+    AppLoadingWheel(
         modifier = modifier
             .fillMaxWidth()
             .wrapContentSize()
@@ -242,7 +242,7 @@ private fun EmptyState(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun LoadingStatePreview() {
-    NiaTheme {
+    AppTheme {
         LoadingState()
     }
 }
@@ -253,7 +253,7 @@ private fun BookmarksGridPreview(
     @PreviewParameter(UserNewsResourcePreviewParameterProvider::class)
     userNewsResources: List<UserNewsResource>,
 ) {
-    NiaTheme {
+    AppTheme {
         BookmarksGrid(
             feedState = Success(userNewsResources),
             removeFromBookmarks = {},
@@ -266,7 +266,7 @@ private fun BookmarksGridPreview(
 @Preview
 @Composable
 private fun EmptyStatePreview() {
-    NiaTheme {
+    AppTheme {
         EmptyState()
     }
 }

@@ -37,14 +37,14 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.swahilib.core.designsystem.component.DynamicAsyncImage
-import com.swahilib.core.designsystem.component.NiaBackground
-import com.swahilib.core.designsystem.component.NiaFilterChip
-import com.swahilib.core.designsystem.component.NiaLoadingWheel
+import com.swahilib.core.designsystem.component.AppBackground
+import com.swahilib.core.designsystem.component.AppFilterChip
+import com.swahilib.core.designsystem.component.AppLoadingWheel
 import com.swahilib.core.designsystem.component.scrollbar.DraggableScrollbar
 import com.swahilib.core.designsystem.component.scrollbar.rememberDraggableScroller
 import com.swahilib.core.designsystem.component.scrollbar.scrollbarState
-import com.swahilib.core.designsystem.icon.NiaIcons
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.icon.AppIcons
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.model.data.FollowableTopic
 import com.swahilib.core.model.data.UserNewsResource
 import com.swahilib.core.ui.DevicePreviews
@@ -107,7 +107,7 @@ internal fun TopicScreen(
             }
             when (topicUiState) {
                 TopicUiState.Loading -> item {
-                    NiaLoadingWheel(
+                    AppLoadingWheel(
                         modifier = modifier,
                         contentDesc = stringResource(id = TopicR.string.feature_topic_api_loading),
                     )
@@ -230,7 +230,7 @@ private fun LazyListScope.userNewsResourceCards(
         }
 
         is NewsUiState.Loading -> item {
-            NiaLoadingWheel(contentDesc = "Loading news") // TODO
+            AppLoadingWheel(contentDesc = "Loading news") // TODO
         }
 
         else -> item {
@@ -242,7 +242,7 @@ private fun LazyListScope.userNewsResourceCards(
 @Preview
 @Composable
 private fun TopicBodyPreview() {
-    NiaTheme {
+    AppTheme {
         LazyColumn {
             topicBody(
                 name = "Jetpack Compose",
@@ -275,18 +275,18 @@ private fun TopicToolbar(
         if (showBackButton) {
             IconButton(onClick = { onBackClick() }) {
                 Icon(
-                    imageVector = NiaIcons.ArrowBack,
+                    imageVector = AppIcons.ArrowBack,
                     contentDescription = stringResource(
                         id = UiR.string.core_ui_back,
                     ),
                 )
             }
         } else {
-            // Keeps the NiaFilterChip aligned to the end of the Row.
+            // Keeps the AppFilterChip aligned to the end of the Row.
             Spacer(modifier = Modifier.width(1.dp))
         }
         val selected = uiState.isFollowed
-        NiaFilterChip(
+        AppFilterChip(
             selected = selected,
             onSelectedChange = onFollowClick,
             modifier = Modifier.padding(end = 24.dp),
@@ -306,8 +306,8 @@ fun TopicScreenPopulated(
     @PreviewParameter(UserNewsResourcePreviewParameterProvider::class)
     userNewsResources: List<UserNewsResource>,
 ) {
-    NiaTheme {
-        NiaBackground {
+    AppTheme {
+        AppBackground {
             TopicScreen(
                 topicUiState = TopicUiState.Success(userNewsResources[0].followableTopics[0]),
                 newsUiState = NewsUiState.Success(userNewsResources),
@@ -325,8 +325,8 @@ fun TopicScreenPopulated(
 @DevicePreviews
 @Composable
 fun TopicScreenLoading() {
-    NiaTheme {
-        NiaBackground {
+    AppTheme {
+        AppBackground {
             TopicScreen(
                 topicUiState = TopicUiState.Loading,
                 newsUiState = NewsUiState.Loading,

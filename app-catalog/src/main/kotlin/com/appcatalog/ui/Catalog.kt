@@ -22,27 +22,27 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.swahilib.core.designsystem.component.NiaButton
-import com.swahilib.core.designsystem.component.NiaFilterChip
-import com.swahilib.core.designsystem.component.NiaIconToggleButton
-import com.swahilib.core.designsystem.component.NiaNavigationBar
-import com.swahilib.core.designsystem.component.NiaNavigationBarItem
-import com.swahilib.core.designsystem.component.NiaOutlinedButton
-import com.swahilib.core.designsystem.component.NiaTab
-import com.swahilib.core.designsystem.component.NiaTabRow
-import com.swahilib.core.designsystem.component.NiaTextButton
-import com.swahilib.core.designsystem.component.NiaTopicTag
-import com.swahilib.core.designsystem.component.NiaViewToggleButton
-import com.swahilib.core.designsystem.icon.NiaIcons
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.component.AppButton
+import com.swahilib.core.designsystem.component.AppFilterChip
+import com.swahilib.core.designsystem.component.AppIconToggleButton
+import com.swahilib.core.designsystem.component.AppNavigationBar
+import com.swahilib.core.designsystem.component.AppNavigationBarItem
+import com.swahilib.core.designsystem.component.AppOutlinedButton
+import com.swahilib.core.designsystem.component.AppTab
+import com.swahilib.core.designsystem.component.AppTabRow
+import com.swahilib.core.designsystem.component.AppTextButton
+import com.swahilib.core.designsystem.component.AppTopicTag
+import com.swahilib.core.designsystem.component.AppViewToggleButton
+import com.swahilib.core.designsystem.icon.AppIcons
+import com.swahilib.core.designsystem.theme.AppTheme
 
 /**
  * SwahiLib component catalog.
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun NiaCatalog() {
-    NiaTheme {
+fun AppCatalog() {
+    AppTheme {
         Surface {
             val contentPadding = WindowInsets
                 .systemBars
@@ -62,13 +62,13 @@ fun NiaCatalog() {
                 item { Text("Buttons", Modifier.padding(top = 16.dp)) }
                 item {
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                        NiaButton(onClick = {}) {
+                        AppButton(onClick = {}) {
                             Text(text = "Enabled")
                         }
-                        NiaOutlinedButton(onClick = {}) {
+                        AppOutlinedButton(onClick = {}) {
                             Text(text = "Enabled")
                         }
-                        NiaTextButton(onClick = {}) {
+                        AppTextButton(onClick = {}) {
                             Text(text = "Enabled")
                         }
                     }
@@ -76,19 +76,19 @@ fun NiaCatalog() {
                 item { Text("Disabled buttons", Modifier.padding(top = 16.dp)) }
                 item {
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                        NiaButton(
+                        AppButton(
                             onClick = {},
                             enabled = false,
                         ) {
                             Text(text = "Disabled")
                         }
-                        NiaOutlinedButton(
+                        AppOutlinedButton(
                             onClick = {},
                             enabled = false,
                         ) {
                             Text(text = "Disabled")
                         }
-                        NiaTextButton(
+                        AppTextButton(
                             onClick = {},
                             enabled = false,
                         ) {
@@ -99,25 +99,25 @@ fun NiaCatalog() {
                 item { Text("Buttons with leading icons", Modifier.padding(top = 16.dp)) }
                 item {
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                        NiaButton(
+                        AppButton(
                             onClick = {},
                             text = { Text(text = "Enabled") },
                             leadingIcon = {
-                                Icon(imageVector = NiaIcons.Add, contentDescription = null)
+                                Icon(imageVector = AppIcons.Add, contentDescription = null)
                             },
                         )
-                        NiaOutlinedButton(
+                        AppOutlinedButton(
                             onClick = {},
                             text = { Text(text = "Enabled") },
                             leadingIcon = {
-                                Icon(imageVector = NiaIcons.Add, contentDescription = null)
+                                Icon(imageVector = AppIcons.Add, contentDescription = null)
                             },
                         )
-                        NiaTextButton(
+                        AppTextButton(
                             onClick = {},
                             text = { Text(text = "Enabled") },
                             leadingIcon = {
-                                Icon(imageVector = NiaIcons.Add, contentDescription = null)
+                                Icon(imageVector = AppIcons.Add, contentDescription = null)
                             },
                         )
                     }
@@ -125,28 +125,28 @@ fun NiaCatalog() {
                 item { Text("Disabled buttons with leading icons", Modifier.padding(top = 16.dp)) }
                 item {
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                        NiaButton(
+                        AppButton(
                             onClick = {},
                             enabled = false,
                             text = { Text(text = "Disabled") },
                             leadingIcon = {
-                                Icon(imageVector = NiaIcons.Add, contentDescription = null)
+                                Icon(imageVector = AppIcons.Add, contentDescription = null)
                             },
                         )
-                        NiaOutlinedButton(
+                        AppOutlinedButton(
                             onClick = {},
                             enabled = false,
                             text = { Text(text = "Disabled") },
                             leadingIcon = {
-                                Icon(imageVector = NiaIcons.Add, contentDescription = null)
+                                Icon(imageVector = AppIcons.Add, contentDescription = null)
                             },
                         )
-                        NiaTextButton(
+                        AppTextButton(
                             onClick = {},
                             enabled = false,
                             text = { Text(text = "Disabled") },
                             leadingIcon = {
-                                Icon(imageVector = NiaIcons.Add, contentDescription = null)
+                                Icon(imageVector = AppIcons.Add, contentDescription = null)
                             },
                         )
                     }
@@ -156,24 +156,24 @@ fun NiaCatalog() {
                 item {
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                         var firstChecked by rememberSaveable { mutableStateOf(false) }
-                        NiaFilterChip(
+                        AppFilterChip(
                             selected = firstChecked,
                             onSelectedChange = { checked -> firstChecked = checked },
                             label = { Text(text = "Enabled") },
                         )
                         var secondChecked by rememberSaveable { mutableStateOf(true) }
-                        NiaFilterChip(
+                        AppFilterChip(
                             selected = secondChecked,
                             onSelectedChange = { checked -> secondChecked = checked },
                             label = { Text(text = "Enabled") },
                         )
-                        NiaFilterChip(
+                        AppFilterChip(
                             selected = false,
                             onSelectedChange = {},
                             enabled = false,
                             label = { Text(text = "Disabled") },
                         )
-                        NiaFilterChip(
+                        AppFilterChip(
                             selected = true,
                             onSelectedChange = {},
                             enabled = false,
@@ -185,68 +185,68 @@ fun NiaCatalog() {
                 item {
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                         var firstChecked by rememberSaveable { mutableStateOf(false) }
-                        NiaIconToggleButton(
+                        AppIconToggleButton(
                             checked = firstChecked,
                             onCheckedChange = { checked -> firstChecked = checked },
                             icon = {
                                 Icon(
-                                    imageVector = NiaIcons.BookmarkBorder,
+                                    imageVector = AppIcons.BookmarkBorder,
                                     contentDescription = null,
                                 )
                             },
                             checkedIcon = {
                                 Icon(
-                                    imageVector = NiaIcons.Bookmark,
+                                    imageVector = AppIcons.Bookmark,
                                     contentDescription = null,
                                 )
                             },
                         )
                         var secondChecked by rememberSaveable { mutableStateOf(true) }
-                        NiaIconToggleButton(
+                        AppIconToggleButton(
                             checked = secondChecked,
                             onCheckedChange = { checked -> secondChecked = checked },
                             icon = {
                                 Icon(
-                                    imageVector = NiaIcons.BookmarkBorder,
+                                    imageVector = AppIcons.BookmarkBorder,
                                     contentDescription = null,
                                 )
                             },
                             checkedIcon = {
                                 Icon(
-                                    imageVector = NiaIcons.Bookmark,
+                                    imageVector = AppIcons.Bookmark,
                                     contentDescription = null,
                                 )
                             },
                         )
-                        NiaIconToggleButton(
+                        AppIconToggleButton(
                             checked = false,
                             onCheckedChange = {},
                             icon = {
                                 Icon(
-                                    imageVector = NiaIcons.BookmarkBorder,
+                                    imageVector = AppIcons.BookmarkBorder,
                                     contentDescription = null,
                                 )
                             },
                             checkedIcon = {
                                 Icon(
-                                    imageVector = NiaIcons.Bookmark,
+                                    imageVector = AppIcons.Bookmark,
                                     contentDescription = null,
                                 )
                             },
                             enabled = false,
                         )
-                        NiaIconToggleButton(
+                        AppIconToggleButton(
                             checked = true,
                             onCheckedChange = {},
                             icon = {
                                 Icon(
-                                    imageVector = NiaIcons.BookmarkBorder,
+                                    imageVector = AppIcons.BookmarkBorder,
                                     contentDescription = null,
                                 )
                             },
                             checkedIcon = {
                                 Icon(
-                                    imageVector = NiaIcons.Bookmark,
+                                    imageVector = AppIcons.Bookmark,
                                     contentDescription = null,
                                 )
                             },
@@ -258,20 +258,20 @@ fun NiaCatalog() {
                 item {
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                         var firstExpanded by rememberSaveable { mutableStateOf(false) }
-                        NiaViewToggleButton(
+                        AppViewToggleButton(
                             expanded = firstExpanded,
                             onExpandedChange = { expanded -> firstExpanded = expanded },
                             compactText = { Text(text = "Compact view") },
                             expandedText = { Text(text = "Expanded view") },
                         )
                         var secondExpanded by rememberSaveable { mutableStateOf(true) }
-                        NiaViewToggleButton(
+                        AppViewToggleButton(
                             expanded = secondExpanded,
                             onExpandedChange = { expanded -> secondExpanded = expanded },
                             compactText = { Text(text = "Compact view") },
                             expandedText = { Text(text = "Expanded view") },
                         )
-                        NiaViewToggleButton(
+                        AppViewToggleButton(
                             expanded = false,
                             onExpandedChange = {},
                             compactText = { Text(text = "Disabled") },
@@ -283,17 +283,17 @@ fun NiaCatalog() {
                 item { Text("Tags", Modifier.padding(top = 16.dp)) }
                 item {
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                        NiaTopicTag(
+                        AppTopicTag(
                             followed = true,
                             onClick = {},
                             text = { Text(text = "Topic 1".uppercase()) },
                         )
-                        NiaTopicTag(
+                        AppTopicTag(
                             followed = false,
                             onClick = {},
                             text = { Text(text = "Topic 2".uppercase()) },
                         )
-                        NiaTopicTag(
+                        AppTopicTag(
                             followed = false,
                             onClick = {},
                             text = { Text(text = "Disabled".uppercase()) },
@@ -305,9 +305,9 @@ fun NiaCatalog() {
                 item {
                     var selectedTabIndex by rememberSaveable { mutableIntStateOf(0) }
                     val titles = listOf("Topics", "People")
-                    NiaTabRow(selectedTabIndex = selectedTabIndex) {
+                    AppTabRow(selectedTabIndex = selectedTabIndex) {
                         titles.forEachIndexed { index, title ->
-                            NiaTab(
+                            AppTab(
                                 selected = selectedTabIndex == index,
                                 onClick = { selectedTabIndex = index },
                                 text = { Text(text = title) },
@@ -320,18 +320,18 @@ fun NiaCatalog() {
                     var selectedItem by rememberSaveable { mutableIntStateOf(0) }
                     val items = listOf("For you", "Saved", "Interests")
                     val icons = listOf(
-                        NiaIcons.UpcomingBorder,
-                        NiaIcons.BookmarksBorder,
-                        NiaIcons.Grid3x3,
+                        AppIcons.UpcomingBorder,
+                        AppIcons.BookmarksBorder,
+                        AppIcons.Grid3x3,
                     )
                     val selectedIcons = listOf(
-                        NiaIcons.Upcoming,
-                        NiaIcons.Bookmarks,
-                        NiaIcons.Grid3x3,
+                        AppIcons.Upcoming,
+                        AppIcons.Bookmarks,
+                        AppIcons.Grid3x3,
                     )
-                    NiaNavigationBar {
+                    AppNavigationBar {
                         items.forEachIndexed { index, item ->
-                            NiaNavigationBarItem(
+                            AppNavigationBarItem(
                                 icon = {
                                     Icon(
                                         imageVector = icons[index],

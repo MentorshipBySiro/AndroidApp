@@ -14,9 +14,9 @@ import androidx.compose.ui.test.then
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import com.github.takahirom.roborazzi.captureRoboImage
-import com.swahilib.core.designsystem.component.NiaBackground
-import com.swahilib.core.designsystem.component.NiaFilterChip
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.component.AppBackground
+import com.swahilib.core.designsystem.component.AppFilterChip
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.testing.util.DefaultRoborazziOptions
 import com.swahilib.core.testing.util.captureMultiTheme
 import dagger.hilt.android.testing.HiltTestApplication
@@ -41,7 +41,7 @@ class FilterChipScreenshotTests {
     fun filterChip_multipleThemes() {
         composeTestRule.captureMultiTheme("FilterChip") {
             Surface {
-                NiaFilterChip(selected = false, onSelectedChange = {}) {
+                AppFilterChip(selected = false, onSelectedChange = {}) {
                     Text("Unselected chip")
                 }
             }
@@ -52,7 +52,7 @@ class FilterChipScreenshotTests {
     fun filterChip_multipleThemes_selected() {
         composeTestRule.captureMultiTheme("FilterChip", "FilterChipSelected") {
             Surface {
-                NiaFilterChip(selected = true, onSelectedChange = {}) {
+                AppFilterChip(selected = true, onSelectedChange = {}) {
                     Text("Selected Chip")
                 }
             }
@@ -69,9 +69,9 @@ class FilterChipScreenshotTests {
                     DeviceConfigurationOverride.FontScale(2f) then
                         DeviceConfigurationOverride.ForcedSize(DpSize(80.dp, 40.dp)),
                 ) {
-                    NiaTheme {
-                        NiaBackground {
-                            NiaFilterChip(selected = true, onSelectedChange = {}) {
+                    AppTheme {
+                        AppBackground {
+                            AppFilterChip(selected = true, onSelectedChange = {}) {
                                 Text("Chip")
                             }
                         }

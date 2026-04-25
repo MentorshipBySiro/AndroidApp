@@ -5,7 +5,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.core.DataStoreFactory
 import androidx.datastore.dataStoreFile
 import com.swahilib.core.common.network.Dispatcher
-import com.swahilib.core.common.network.NiaDispatchers.IO
+import com.swahilib.core.common.network.AppDispatchers.IO
 import com.swahilib.core.common.network.di.ApplicationScope
 import com.swahilib.core.datastore.IntToStringIdsMigration
 import com.swahilib.core.datastore.UserPreferences

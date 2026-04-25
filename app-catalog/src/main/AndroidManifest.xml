@@ -7,12 +7,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NiaCatalog">
+        android:theme="@style/Theme.AppCatalog">
         <activity
             android:name="com.appcatalog.AppCatalogActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.NiaCatalog">
+            android:theme="@style/Theme.AppCatalog">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -49,11 +49,11 @@ import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
 import com.swahilib.R
-import com.swahilib.core.designsystem.component.NiaBackground
-import com.swahilib.core.designsystem.component.NiaGradientBackground
-import com.swahilib.core.designsystem.component.NiaNavigationSuiteScaffold
-import com.swahilib.core.designsystem.component.NiaTopAppBar
-import com.swahilib.core.designsystem.icon.NiaIcons
+import com.swahilib.core.designsystem.component.AppBackground
+import com.swahilib.core.designsystem.component.AppGradientBackground
+import com.swahilib.core.designsystem.component.AppNavigationSuiteScaffold
+import com.swahilib.core.designsystem.component.AppTopAppBar
+import com.swahilib.core.designsystem.icon.AppIcons
 import com.swahilib.core.designsystem.theme.GradientColors
 import com.swahilib.core.designsystem.theme.LocalGradientColors
 import com.swahilib.core.navigation.Navigator
@@ -71,16 +71,16 @@ import com.swahilib.navigation.TOP_LEVEL_NAV_ITEMS
 import com.swahilib.feature.settings.impl.R as settingsR
 
 @Composable
-fun NiaApp(
-    appState: NiaAppState,
+fun MainApp(
+    appState: MainAppState,
     modifier: Modifier = Modifier,
     windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
 ) {
     val shouldShowGradientBackground = appState.navigationState.currentTopLevelKey == ForYouNavKey
     var showSettingsDialog by rememberSaveable { mutableStateOf(false) }
 
-    NiaBackground(modifier = modifier) {
-        NiaGradientBackground(
+    AppBackground(modifier = modifier) {
+        AppGradientBackground(
             gradientColors = if (shouldShowGradientBackground) {
                 LocalGradientColors.current
             } else {
@@ -102,7 +102,7 @@ fun NiaApp(
                 }
             }
             CompositionLocalProvider(LocalSnackbarHostState provides snackbarHostState) {
-                NiaApp(
+                MainApp(
                     appState = appState,
 
                     // TODO: Settings should be a dialog screen
@@ -122,8 +122,8 @@ fun NiaApp(
     ExperimentalComposeUiApi::class,
     ExperimentalMaterial3AdaptiveApi::class,
 )
-internal fun NiaApp(
-    appState: NiaAppState,
+internal fun MainApp(
+    appState: MainAppState,
     showSettingsDialog: Boolean,
     onSettingsDismissed: () -> Unit,
     onTopAppBarActionClick: () -> Unit,
@@ -143,7 +143,7 @@ internal fun NiaApp(
 
     val navigator = remember { Navigator(appState.navigationState) }
 
-    NiaNavigationSuiteScaffold(
+    AppNavigationSuiteScaffold(
         navigationSuiteItems = {
             TOP_LEVEL_NAV_ITEMS.forEach { (navKey, navItem) ->
                 val hasUnread = unreadNavKeys.contains(navKey)
@@ -165,7 +165,7 @@ internal fun NiaApp(
                     },
                     label = { Text(stringResource(navItem.iconTextId)) },
                     modifier = Modifier
-                        .testTag("NiaNavItem")
+                        .testTag("AppNavItem")
                         .then(if (hasUnread) Modifier.notificationDot() else Modifier),
                 )
             }
@@ -210,13 +210,13 @@ internal fun NiaApp(
                     val destination = TOP_LEVEL_NAV_ITEMS[appState.navigationState.currentTopLevelKey]
                         ?: error("Top level nav item not found for ${appState.navigationState.currentTopLevelKey}")
 
-                    NiaTopAppBar(
+                    AppTopAppBar(
                         titleRes = destination.titleTextId,
-                        navigationIcon = NiaIcons.Search,
+                        navigationIcon = AppIcons.Search,
                         navigationIconContentDescription = stringResource(
                             id = settingsR.string.feature_settings_impl_top_app_bar_navigation_icon_description,
                         ),
-                        actionIcon = NiaIcons.Settings,
+                        actionIcon = AppIcons.Settings,
                         actionIconContentDescription = stringResource(
                             id = settingsR.string.feature_settings_impl_top_app_bar_action_icon_description,
                         ),

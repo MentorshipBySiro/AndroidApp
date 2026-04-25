@@ -3,7 +3,7 @@ package com.swahilib.navigation
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.swahilib.R
-import com.swahilib.core.designsystem.icon.NiaIcons
+import com.swahilib.core.designsystem.icon.AppIcons
 import com.swahilib.feature.bookmarks.api.navigation.BookmarksNavKey
 import com.swahilib.feature.foryou.api.navigation.ForYouNavKey
 import com.swahilib.feature.interests.api.navigation.InterestsNavKey
@@ -30,22 +30,22 @@ data class TopLevelNavItem(
 )
 
 val FOR_YOU = TopLevelNavItem(
-    selectedIcon = NiaIcons.Upcoming,
-    unselectedIcon = NiaIcons.UpcomingBorder,
+    selectedIcon = AppIcons.Upcoming,
+    unselectedIcon = AppIcons.UpcomingBorder,
     iconTextId = forYouR.string.feature_foryou_api_title,
     titleTextId = R.string.app_name,
 )
 
 val BOOKMARKS = TopLevelNavItem(
-    selectedIcon = NiaIcons.Bookmarks,
-    unselectedIcon = NiaIcons.BookmarksBorder,
+    selectedIcon = AppIcons.Bookmarks,
+    unselectedIcon = AppIcons.BookmarksBorder,
     iconTextId = bookmarksR.string.feature_bookmarks_api_title,
     titleTextId = bookmarksR.string.feature_bookmarks_api_title,
 )
 
 val INTERESTS = TopLevelNavItem(
-    selectedIcon = NiaIcons.Grid3x3,
-    unselectedIcon = NiaIcons.Grid3x3,
+    selectedIcon = AppIcons.Grid3x3,
+    unselectedIcon = AppIcons.Grid3x3,
     iconTextId = searchR.string.feature_search_api_interests,
     titleTextId = searchR.string.feature_search_api_interests,
 )

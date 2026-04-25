@@ -2,7 +2,7 @@ package com.swahilib.core.network.retrofit
 
 import androidx.tracing.trace
 import com.swahilib.core.network.BuildConfig
-import com.swahilib.core.network.NiaNetworkDataSource
+import com.swahilib.core.network.AppNetworkDataSource
 import com.swahilib.core.network.model.NetworkChangeList
 import com.swahilib.core.network.model.NetworkNewsResource
 import com.swahilib.core.network.model.NetworkTopic
@@ -20,7 +20,7 @@ import javax.inject.Singleton
 /**
  * Retrofit API declaration for App Network API
  */
-private interface RetrofitNiaNetworkApi {
+private interface RetrofitAppNetworkApi {
     @GET(value = "topics")
     suspend fun getTopics(
         @Query("id") ids: List<String>?,
@@ -53,15 +53,15 @@ private data class NetworkResponse<T>(
 )
 
 /**
- * [Retrofit] backed [NiaNetworkDataSource]
+ * [Retrofit] backed [AppNetworkDataSource]
  */
 @Singleton
-internal class RetrofitNiaNetwork @Inject constructor(
+internal class RetrofitAppNetwork @Inject constructor(
     networkJson: Json,
     okhttpCallFactory: dagger.Lazy<Call.Factory>,
-) : NiaNetworkDataSource {
+) : AppNetworkDataSource {
 
-    private val networkApi = trace("RetrofitNiaNetwork") {
+    private val networkApi = trace("RetrofitAppNetwork") {
         Retrofit.Builder()
             .baseUrl(APP_BASE_URL)
             // We use callFactory lambda here with dagger.Lazy<Call.Factory>
@@ -71,7 +71,7 @@ internal class RetrofitNiaNetwork @Inject constructor(
                 networkJson.asConverterFactory("application/json".toMediaType()),
             )
             .build()
-            .create(RetrofitNiaNetworkApi::class.java)
+            .create(RetrofitAppNetworkApi::class.java)
     }
 
     override suspend fun getTopics(ids: List<String>?): List<NetworkTopic> =

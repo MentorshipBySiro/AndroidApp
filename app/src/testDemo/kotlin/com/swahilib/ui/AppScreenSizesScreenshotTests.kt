@@ -18,7 +18,7 @@ import com.swahilib.core.data.repository.UserDataRepository
 import com.swahilib.core.data.repository.UserNewsResourceRepository
 import com.swahilib.core.data.util.NetworkMonitor
 import com.swahilib.core.data.util.TimeZoneMonitor
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.testing.util.DefaultRoborazziOptions
 import com.swahilib.uitesthiltmanifest.HiltComponentActivity
 import dagger.hilt.android.testing.HiltAndroidRule
@@ -47,7 +47,7 @@ import javax.inject.Inject
 @Config(application = HiltTestApplication::class, qualifiers = "w1000dp-h1000dp-480dpi")
 @LooperMode(LooperMode.Mode.PAUSED)
 @HiltAndroidTest
-class NiaAppScreenSizesScreenshotTests {
+class AppAppScreenSizesScreenshotTests {
 
     /**
      * Manages the components' state and is used to perform injection on your test
@@ -96,7 +96,7 @@ class NiaAppScreenSizesScreenshotTests {
         TimeZone.setDefault(TimeZone.getTimeZone("UTC"))
     }
 
-    private fun testNiaAppScreenshotWithSize(width: Dp, height: Dp, screenshotName: String) {
+    private fun testAppAppScreenshotWithSize(width: Dp, height: Dp, screenshotName: String) {
         composeTestRule.setContent {
             CompositionLocalProvider(
                 LocalInspectionMode provides true,
@@ -104,13 +104,13 @@ class NiaAppScreenSizesScreenshotTests {
                 DeviceConfigurationOverride(
                     override = DeviceConfigurationOverride.ForcedSize(DpSize(width, height)),
                 ) {
-                    NiaTheme {
-                        val fakeAppState = rememberNiaAppState(
+                    AppTheme {
+                        val fakeAppState = rememberAppAppState(
                             networkMonitor = networkMonitor,
                             userNewsResourceRepository = userNewsResourceRepository,
                             timeZoneMonitor = timeZoneMonitor,
                         )
-                        NiaApp(
+                        MainApp(
                             fakeAppState,
                             windowAdaptiveInfo = WindowAdaptiveInfo(
                                 windowSizeClass = WindowSizeClass.compute(
@@ -134,7 +134,7 @@ class NiaAppScreenSizesScreenshotTests {
 
     @Test
     fun compactWidth_compactHeight_showsNavigationBar() {
-        testNiaAppScreenshotWithSize(
+        testAppAppScreenshotWithSize(
             400.dp,
             400.dp,
             "compactWidth_compactHeight_showsNavigationBar",
@@ -143,7 +143,7 @@ class NiaAppScreenSizesScreenshotTests {
 
     @Test
     fun mediumWidth_compactHeight_showsNavigationBar() {
-        testNiaAppScreenshotWithSize(
+        testAppAppScreenshotWithSize(
             610.dp,
             400.dp,
             "mediumWidth_compactHeight_showsNavigationBar",
@@ -152,7 +152,7 @@ class NiaAppScreenSizesScreenshotTests {
 
     @Test
     fun expandedWidth_compactHeight_showsNavigationBar() {
-        testNiaAppScreenshotWithSize(
+        testAppAppScreenshotWithSize(
             900.dp,
             400.dp,
             "expandedWidth_compactHeight_showsNavigationBar",
@@ -161,7 +161,7 @@ class NiaAppScreenSizesScreenshotTests {
 
     @Test
     fun compactWidth_mediumHeight_showsNavigationBar() {
-        testNiaAppScreenshotWithSize(
+        testAppAppScreenshotWithSize(
             400.dp,
             500.dp,
             "compactWidth_mediumHeight_showsNavigationBar",
@@ -170,7 +170,7 @@ class NiaAppScreenSizesScreenshotTests {
 
     @Test
     fun mediumWidth_mediumHeight_showsNavigationRail() {
-        testNiaAppScreenshotWithSize(
+        testAppAppScreenshotWithSize(
             610.dp,
             500.dp,
             "mediumWidth_mediumHeight_showsNavigationRail",
@@ -179,7 +179,7 @@ class NiaAppScreenSizesScreenshotTests {
 
     @Test
     fun expandedWidth_mediumHeight_showsNavigationRail() {
-        testNiaAppScreenshotWithSize(
+        testAppAppScreenshotWithSize(
             900.dp,
             500.dp,
             "expandedWidth_mediumHeight_showsNavigationRail",
@@ -188,7 +188,7 @@ class NiaAppScreenSizesScreenshotTests {
 
     @Test
     fun compactWidth_expandedHeight_showsNavigationBar() {
-        testNiaAppScreenshotWithSize(
+        testAppAppScreenshotWithSize(
             400.dp,
             1000.dp,
             "compactWidth_expandedHeight_showsNavigationBar",
@@ -197,7 +197,7 @@ class NiaAppScreenSizesScreenshotTests {
 
     @Test
     fun mediumWidth_expandedHeight_showsNavigationRail() {
-        testNiaAppScreenshotWithSize(
+        testAppAppScreenshotWithSize(
             610.dp,
             1000.dp,
             "mediumWidth_expandedHeight_showsNavigationRail",
@@ -206,7 +206,7 @@ class NiaAppScreenSizesScreenshotTests {
 
     @Test
     fun expandedWidth_expandedHeight_showsNavigationRail() {
-        testNiaAppScreenshotWithSize(
+        testAppAppScreenshotWithSize(
             900.dp,
             1000.dp,
             "expandedWidth_expandedHeight_showsNavigationRail",

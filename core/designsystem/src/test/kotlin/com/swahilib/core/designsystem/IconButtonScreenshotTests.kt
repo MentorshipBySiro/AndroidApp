@@ -5,8 +5,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import com.swahilib.core.designsystem.component.NiaIconToggleButton
-import com.swahilib.core.designsystem.icon.NiaIcons
+import com.swahilib.core.designsystem.component.AppIconToggleButton
+import com.swahilib.core.designsystem.icon.AppIcons
 import com.swahilib.core.testing.util.captureMultiTheme
 import dagger.hilt.android.testing.HiltTestApplication
 import org.junit.Rule
@@ -29,7 +29,7 @@ class IconButtonScreenshotTests {
     @Test
     fun iconButton_multipleThemes() {
         composeTestRule.captureMultiTheme("IconButton") {
-            NiaIconToggleExample(false)
+            AppIconToggleExample(false)
         }
     }
 
@@ -37,25 +37,25 @@ class IconButtonScreenshotTests {
     fun iconButton_unchecked_multipleThemes() {
         composeTestRule.captureMultiTheme("IconButton", "IconButtonUnchecked") {
             Surface {
-                NiaIconToggleExample(true)
+                AppIconToggleExample(true)
             }
         }
     }
 
     @Composable
-    private fun NiaIconToggleExample(checked: Boolean) {
-        NiaIconToggleButton(
+    private fun AppIconToggleExample(checked: Boolean) {
+        AppIconToggleButton(
             checked = checked,
             onCheckedChange = { },
             icon = {
                 Icon(
-                    imageVector = NiaIcons.BookmarkBorder,
+                    imageVector = AppIcons.BookmarkBorder,
                     contentDescription = null,
                 )
             },
             checkedIcon = {
                 Icon(
-                    imageVector = NiaIcons.Bookmark,
+                    imageVector = AppIcons.Bookmark,
                     contentDescription = null,
                 )
             },

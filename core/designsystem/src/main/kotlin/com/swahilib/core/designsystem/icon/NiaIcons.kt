@@ -23,7 +23,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 /**
  * SwahiLib icons. Material icons are [ImageVector]s, custom icons are drawable resource IDs.
  */
-object NiaIcons {
+object AppIcons {
     val Add = Icons.Rounded.Add
     val ArrowBack = Icons.AutoMirrored.Rounded.ArrowBack
     val Bookmark = Icons.Rounded.Bookmark

@@ -18,7 +18,7 @@ android {
         applicationId = "com.swahilib"
         versionCode = 150
         versionName = "1.0.150"
-        testInstrumentationRunner = "com.swahilib.core.testing.NiaTestRunner"
+        testInstrumentationRunner = "com.swahilib.core.testing.AppTestRunner"
     }
 
     buildTypes {

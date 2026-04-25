@@ -10,13 +10,13 @@ import androidx.work.OutOfQuotaPolicy
 import androidx.work.WorkerParameters
 import com.swahilib.core.analytics.AnalyticsHelper
 import com.swahilib.core.common.network.Dispatcher
-import com.swahilib.core.common.network.NiaDispatchers.IO
+import com.swahilib.core.common.network.AppDispatchers.IO
 import com.swahilib.core.data.Synchronizer
 import com.swahilib.core.data.repository.NewsRepository
 import com.swahilib.core.data.repository.SearchContentsRepository
 import com.swahilib.core.data.repository.TopicsRepository
 import com.swahilib.core.datastore.ChangeListVersions
-import com.swahilib.core.datastore.NiaPreferencesDataSource
+import com.swahilib.core.datastore.AppPreferencesDataSource
 import com.swahilib.sync.initializers.SyncConstraints
 import com.swahilib.sync.initializers.syncForegroundInfo
 import com.swahilib.sync.status.SyncSubscriber
@@ -35,7 +35,7 @@ import kotlinx.coroutines.withContext
 internal class SyncWorker @AssistedInject constructor(
     @Assisted private val appContext: Context,
     @Assisted workerParams: WorkerParameters,
-    private val niaPreferences: NiaPreferencesDataSource,
+    private val appPreferences: AppPreferencesDataSource,
     private val topicRepository: TopicsRepository,
     private val newsRepository: NewsRepository,
     private val searchContentsRepository: SearchContentsRepository,
@@ -71,11 +71,11 @@ internal class SyncWorker @AssistedInject constructor(
     }
 
     override suspend fun getChangeListVersions(): ChangeListVersions =
-        niaPreferences.getChangeListVersions()
+        appPreferences.getChangeListVersions()
 
     override suspend fun updateChangeListVersions(
         update: ChangeListVersions.() -> ChangeListVersions,
-    ) = niaPreferences.updateChangeListVersion(update)
+    ) = appPreferences.updateChangeListVersion(update)
 
     companion object {
         /**

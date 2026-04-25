@@ -12,10 +12,10 @@ import androidx.compose.ui.test.FontScale
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onRoot
 import com.github.takahirom.roborazzi.captureRoboImage
-import com.swahilib.core.designsystem.component.NiaNavigationBar
-import com.swahilib.core.designsystem.component.NiaNavigationBarItem
-import com.swahilib.core.designsystem.icon.NiaIcons
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.component.AppNavigationBar
+import com.swahilib.core.designsystem.component.AppNavigationBarItem
+import com.swahilib.core.designsystem.icon.AppIcons
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.testing.util.DefaultRoborazziOptions
 import com.swahilib.core.testing.util.captureMultiTheme
 import dagger.hilt.android.testing.HiltTestApplication
@@ -40,7 +40,7 @@ class NavigationScreenshotTests {
     fun navigation_multipleThemes() {
         composeTestRule.captureMultiTheme("Navigation") {
             Surface {
-                NiaNavigationBarExample()
+                AppNavigationBarExample()
             }
         }
     }
@@ -54,8 +54,8 @@ class NavigationScreenshotTests {
                 DeviceConfigurationOverride(
                     DeviceConfigurationOverride.FontScale(2f),
                 ) {
-                    NiaTheme {
-                        NiaNavigationBarExample("Looong item")
+                    AppTheme {
+                        AppNavigationBarExample("Looong item")
                     }
                 }
             }
@@ -69,19 +69,19 @@ class NavigationScreenshotTests {
     }
 
     @Composable
-    private fun NiaNavigationBarExample(label: String = "Item") {
-        NiaNavigationBar {
+    private fun AppNavigationBarExample(label: String = "Item") {
+        AppNavigationBar {
             (0..2).forEach { index ->
-                NiaNavigationBarItem(
+                AppNavigationBarItem(
                     icon = {
                         Icon(
-                            imageVector = NiaIcons.UpcomingBorder,
+                            imageVector = AppIcons.UpcomingBorder,
                             contentDescription = "",
                         )
                     },
                     selectedIcon = {
                         Icon(
-                            imageVector = NiaIcons.Upcoming,
+                            imageVector = AppIcons.Upcoming,
                             contentDescription = "",
                         )
                     },

@@ -1,13 +1,13 @@
 package com.swahilib.core.data.test.repository
 
 import com.swahilib.core.common.network.Dispatcher
-import com.swahilib.core.common.network.NiaDispatchers.IO
+import com.swahilib.core.common.network.AppDispatchers.IO
 import com.swahilib.core.data.Synchronizer
 import com.swahilib.core.data.model.asExternalModel
 import com.swahilib.core.data.repository.NewsRepository
 import com.swahilib.core.data.repository.NewsResourceQuery
 import com.swahilib.core.model.data.NewsResource
-import com.swahilib.core.network.demo.DemoNiaNetworkDataSource
+import com.swahilib.core.network.demo.DemoAppNetworkDataSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -22,7 +22,7 @@ import javax.inject.Inject
  */
 class FakeNewsRepository @Inject constructor(
     @Dispatcher(IO) private val ioDispatcher: CoroutineDispatcher,
-    private val datasource: DemoNiaNetworkDataSource,
+    private val datasource: DemoAppNetworkDataSource,
 ) : NewsRepository {
 
     override fun getNewsResources(

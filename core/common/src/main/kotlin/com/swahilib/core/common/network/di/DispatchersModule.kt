@@ -1,8 +1,8 @@
 package com.swahilib.core.common.network.di
 
 import com.swahilib.core.common.network.Dispatcher
-import com.swahilib.core.common.network.NiaDispatchers.Default
-import com.swahilib.core.common.network.NiaDispatchers.IO
+import com.swahilib.core.common.network.AppDispatchers.Default
+import com.swahilib.core.common.network.AppDispatchers.IO
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

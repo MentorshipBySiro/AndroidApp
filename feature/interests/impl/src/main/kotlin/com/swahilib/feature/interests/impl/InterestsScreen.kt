@@ -9,9 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.swahilib.core.designsystem.component.NiaBackground
-import com.swahilib.core.designsystem.component.NiaLoadingWheel
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.component.AppBackground
+import com.swahilib.core.designsystem.component.AppLoadingWheel
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.model.data.FollowableTopic
 import com.swahilib.core.ui.DevicePreviews
 import com.swahilib.core.ui.FollowableTopicPreviewParameterProvider
@@ -54,7 +54,7 @@ internal fun InterestsScreen(
     ) {
         when (uiState) {
             InterestsUiState.Loading ->
-                NiaLoadingWheel(
+                AppLoadingWheel(
                     contentDesc = stringResource(id = R.string.feature_interests_api_loading),
                 )
 
@@ -84,8 +84,8 @@ fun InterestsScreenPopulated(
     @PreviewParameter(FollowableTopicPreviewParameterProvider::class)
     followableTopics: List<FollowableTopic>,
 ) {
-    NiaTheme {
-        NiaBackground {
+    AppTheme {
+        AppBackground {
             InterestsScreen(
                 uiState = InterestsUiState.Interests(
                     selectedTopicId = null,
@@ -101,8 +101,8 @@ fun InterestsScreenPopulated(
 @DevicePreviews
 @Composable
 fun InterestsScreenLoading() {
-    NiaTheme {
-        NiaBackground {
+    AppTheme {
+        AppBackground {
             InterestsScreen(
                 uiState = InterestsUiState.Loading,
                 followTopic = { _, _ -> },
@@ -115,8 +115,8 @@ fun InterestsScreenLoading() {
 @DevicePreviews
 @Composable
 fun InterestsScreenEmpty() {
-    NiaTheme {
-        NiaBackground {
+    AppTheme {
+        AppBackground {
             InterestsScreen(
                 uiState = InterestsUiState.Empty,
                 followTopic = { _, _ -> },

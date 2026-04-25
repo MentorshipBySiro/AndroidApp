@@ -1,7 +1,7 @@
 package com.swahilib.core.data.test.repository
 
 import com.swahilib.core.data.repository.UserDataRepository
-import com.swahilib.core.datastore.NiaPreferencesDataSource
+import com.swahilib.core.datastore.AppPreferencesDataSource
 import com.swahilib.core.model.data.DarkThemeConfig
 import com.swahilib.core.model.data.ThemeBrand
 import com.swahilib.core.model.data.UserData
@@ -15,38 +15,38 @@ import javax.inject.Inject
  * backend.
  */
 class FakeUserDataRepository @Inject constructor(
-    private val niaPreferencesDataSource: NiaPreferencesDataSource,
+    private val appPreferencesDataSource: AppPreferencesDataSource,
 ) : UserDataRepository {
 
     override val userData: Flow<UserData> =
-        niaPreferencesDataSource.userData
+        appPreferencesDataSource.userData
 
     override suspend fun setFollowedTopicIds(followedTopicIds: Set<String>) =
-        niaPreferencesDataSource.setFollowedTopicIds(followedTopicIds)
+        appPreferencesDataSource.setFollowedTopicIds(followedTopicIds)
 
     override suspend fun setTopicIdFollowed(followedTopicId: String, followed: Boolean) =
-        niaPreferencesDataSource.setTopicIdFollowed(followedTopicId, followed)
+        appPreferencesDataSource.setTopicIdFollowed(followedTopicId, followed)
 
     override suspend fun setNewsResourceBookmarked(newsResourceId: String, bookmarked: Boolean) {
-        niaPreferencesDataSource.setNewsResourceBookmarked(newsResourceId, bookmarked)
+        appPreferencesDataSource.setNewsResourceBookmarked(newsResourceId, bookmarked)
     }
 
     override suspend fun setNewsResourceViewed(newsResourceId: String, viewed: Boolean) =
-        niaPreferencesDataSource.setNewsResourceViewed(newsResourceId, viewed)
+        appPreferencesDataSource.setNewsResourceViewed(newsResourceId, viewed)
 
     override suspend fun setThemeBrand(themeBrand: ThemeBrand) {
-        niaPreferencesDataSource.setThemeBrand(themeBrand)
+        appPreferencesDataSource.setThemeBrand(themeBrand)
     }
 
     override suspend fun setDarkThemeConfig(darkThemeConfig: DarkThemeConfig) {
-        niaPreferencesDataSource.setDarkThemeConfig(darkThemeConfig)
+        appPreferencesDataSource.setDarkThemeConfig(darkThemeConfig)
     }
 
     override suspend fun setDynamicColorPreference(useDynamicColor: Boolean) {
-        niaPreferencesDataSource.setDynamicColorPreference(useDynamicColor)
+        appPreferencesDataSource.setDynamicColorPreference(useDynamicColor)
     }
 
     override suspend fun setShouldHideOnboarding(shouldHideOnboarding: Boolean) {
-        niaPreferencesDataSource.setShouldHideOnboarding(shouldHideOnboarding)
+        appPreferencesDataSource.setShouldHideOnboarding(shouldHideOnboarding)
     }
 }

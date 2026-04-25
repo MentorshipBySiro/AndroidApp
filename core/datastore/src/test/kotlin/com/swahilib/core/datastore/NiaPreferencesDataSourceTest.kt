@@ -10,15 +10,15 @@ import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class NiaPreferencesDataSourceTest {
+class AppPreferencesDataSourceTest {
 
     private val testScope = TestScope(UnconfinedTestDispatcher())
 
-    private lateinit var subject: NiaPreferencesDataSource
+    private lateinit var subject: AppPreferencesDataSource
 
     @Before
     fun setup() {
-        subject = NiaPreferencesDataSource(InMemoryDataStore(UserPreferences.getDefaultInstance()))
+        subject = AppPreferencesDataSource(InMemoryDataStore(UserPreferences.getDefaultInstance()))
     }
 
     @Test

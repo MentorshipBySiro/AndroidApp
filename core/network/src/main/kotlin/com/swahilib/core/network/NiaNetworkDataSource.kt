@@ -7,7 +7,7 @@ import com.swahilib.core.network.model.NetworkTopic
 /**
  * Interface representing network calls to the App backend
  */
-interface NiaNetworkDataSource {
+interface AppNetworkDataSource {
     suspend fun getTopics(ids: List<String>? = null): List<NetworkTopic>
 
     suspend fun getNewsResources(ids: List<String>? = null): List<NetworkNewsResource>

@@ -67,8 +67,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.swahilib.core.designsystem.component.scrollbar.DraggableScrollbar
 import com.swahilib.core.designsystem.component.scrollbar.rememberDraggableScroller
 import com.swahilib.core.designsystem.component.scrollbar.scrollbarState
-import com.swahilib.core.designsystem.icon.NiaIcons
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.icon.AppIcons
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.model.data.FollowableTopic
 import com.swahilib.core.model.data.UserNewsResource
 import com.swahilib.core.ui.DevicePreviews
@@ -399,7 +399,7 @@ private fun RecentSearchesBody(
                     modifier = Modifier.padding(horizontal = 16.dp),
                 ) {
                     Icon(
-                        imageVector = NiaIcons.Close,
+                        imageVector = AppIcons.Close,
                         contentDescription = stringResource(
                             id = searchR.string.feature_search_api_clear_recent_searches_content_desc,
                         ),
@@ -437,7 +437,7 @@ private fun SearchToolbar(
     ) {
         IconButton(onClick = { onBackClick() }) {
             Icon(
-                imageVector = NiaIcons.ArrowBack,
+                imageVector = AppIcons.ArrowBack,
                 contentDescription = stringResource(
                     id = string.core_ui_back,
                 ),
@@ -473,7 +473,7 @@ private fun SearchTextField(
         ),
         leadingIcon = {
             Icon(
-                imageVector = NiaIcons.Search,
+                imageVector = AppIcons.Search,
                 contentDescription = stringResource(
                     id = searchR.string.feature_search_api_title,
                 ),
@@ -488,7 +488,7 @@ private fun SearchTextField(
                     },
                 ) {
                     Icon(
-                        imageVector = NiaIcons.Close,
+                        imageVector = AppIcons.Close,
                         contentDescription = stringResource(
                             id = searchR.string.feature_search_api_clear_search_text_content_desc,
                         ),
@@ -536,7 +536,7 @@ private fun SearchTextField(
 @Preview
 @Composable
 private fun SearchToolbarPreview() {
-    NiaTheme {
+    AppTheme {
         SearchToolbar(
             searchQuery = "",
             onBackClick = {},
@@ -549,7 +549,7 @@ private fun SearchToolbarPreview() {
 @Preview
 @Composable
 private fun EmptySearchResultColumnPreview() {
-    NiaTheme {
+    AppTheme {
         EmptySearchResultBody(
             onInterestsClick = {},
             searchQuery = "C++",
@@ -560,7 +560,7 @@ private fun EmptySearchResultColumnPreview() {
 @Preview
 @Composable
 private fun RecentSearchesBodyPreview() {
-    NiaTheme {
+    AppTheme {
         RecentSearchesBody(
             onClearRecentSearches = {},
             onRecentSearchClicked = {},
@@ -572,7 +572,7 @@ private fun RecentSearchesBodyPreview() {
 @Preview
 @Composable
 private fun SearchNotReadyBodyPreview() {
-    NiaTheme {
+    AppTheme {
         SearchNotReadyBody()
     }
 }
@@ -583,7 +583,7 @@ private fun SearchScreenPreview(
     @PreviewParameter(SearchUiStatePreviewParameterProvider::class)
     searchResultUiState: SearchResultUiState,
 ) {
-    NiaTheme {
+    AppTheme {
         SearchScreen(searchResultUiState = searchResultUiState)
     }
 }

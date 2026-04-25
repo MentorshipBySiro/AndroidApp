@@ -15,8 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.swahilib.core.designsystem.icon.NiaIcons
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.icon.AppIcons
+import com.swahilib.core.designsystem.theme.AppTheme
 
 /**
  * SwahiLib view toggle button with included trailing icon as well as compact and expanded
@@ -31,7 +31,7 @@ import com.swahilib.core.designsystem.theme.NiaTheme
  * @param expandedText The text label content to show in compact mode.
  */
 @Composable
-fun NiaViewToggleButton(
+fun AppViewToggleButton(
     expanded: Boolean,
     onExpandedChange: (Boolean) -> Unit,
     modifier: Modifier = Modifier,
@@ -46,13 +46,13 @@ fun NiaViewToggleButton(
         colors = ButtonDefaults.textButtonColors(
             contentColor = MaterialTheme.colorScheme.onBackground,
         ),
-        contentPadding = NiaViewToggleDefaults.ViewToggleButtonContentPadding,
+        contentPadding = AppViewToggleDefaults.ViewToggleButtonContentPadding,
     ) {
-        NiaViewToggleButtonContent(
+        AppViewToggleButtonContent(
             text = if (expanded) expandedText else compactText,
             trailingIcon = {
                 Icon(
-                    imageVector = if (expanded) NiaIcons.ViewDay else NiaIcons.ShortText,
+                    imageVector = if (expanded) AppIcons.ViewDay else AppIcons.ShortText,
                     contentDescription = null,
                 )
             },
@@ -68,7 +68,7 @@ fun NiaViewToggleButton(
  * @param trailingIcon The button trailing icon content. Default is `null` for no trailing icon.
  */
 @Composable
-private fun NiaViewToggleButtonContent(
+private fun AppViewToggleButtonContent(
     text: @Composable () -> Unit,
     trailingIcon: @Composable (() -> Unit)? = null,
 ) {
@@ -96,9 +96,9 @@ private fun NiaViewToggleButtonContent(
 @ThemePreviews
 @Composable
 fun ViewTogglePreviewExpanded() {
-    NiaTheme {
+    AppTheme {
         Surface {
-            NiaViewToggleButton(
+            AppViewToggleButton(
                 expanded = true,
                 onExpandedChange = { },
                 compactText = { Text(text = "Compact view") },
@@ -111,9 +111,9 @@ fun ViewTogglePreviewExpanded() {
 @Preview
 @Composable
 fun ViewTogglePreviewCompact() {
-    NiaTheme {
+    AppTheme {
         Surface {
-            NiaViewToggleButton(
+            AppViewToggleButton(
                 expanded = false,
                 onExpandedChange = { },
                 compactText = { Text(text = "Compact view") },
@@ -126,7 +126,7 @@ fun ViewTogglePreviewCompact() {
 /**
  * SwahiLib view toggle default values.
  */
-object NiaViewToggleDefaults {
+object AppViewToggleDefaults {
     // TODO: File bug
     // Various default button padding values aren't exposed via ButtonDefaults
     val ViewToggleButtonContentPadding =

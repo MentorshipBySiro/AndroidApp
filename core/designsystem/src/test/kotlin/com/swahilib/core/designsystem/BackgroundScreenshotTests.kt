@@ -6,8 +6,8 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.unit.dp
-import com.swahilib.core.designsystem.component.NiaBackground
-import com.swahilib.core.designsystem.component.NiaGradientBackground
+import com.swahilib.core.designsystem.component.AppBackground
+import com.swahilib.core.designsystem.component.AppGradientBackground
 import com.swahilib.core.testing.util.captureMultiTheme
 import dagger.hilt.android.testing.HiltTestApplication
 import org.junit.Rule
@@ -28,18 +28,18 @@ class BackgroundScreenshotTests {
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
     @Test
-    fun niaBackground_multipleThemes() {
+    fun appBackground_multipleThemes() {
         composeTestRule.captureMultiTheme("Background") { description ->
-            NiaBackground(Modifier.size(100.dp)) {
+            AppBackground(Modifier.size(100.dp)) {
                 Text("$description background")
             }
         }
     }
 
     @Test
-    fun niaGradientBackground_multipleThemes() {
+    fun appGradientBackground_multipleThemes() {
         composeTestRule.captureMultiTheme("Background", "GradientBackground") { description ->
-            NiaGradientBackground(Modifier.size(100.dp)) {
+            AppGradientBackground(Modifier.size(100.dp)) {
                 Text("$description background")
             }
         }

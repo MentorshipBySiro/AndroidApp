@@ -3,12 +3,12 @@ package com.swahilib.core.data.repository
 import com.swahilib.core.data.Synchronizer
 import com.swahilib.core.data.model.asEntity
 import com.swahilib.core.data.testdoubles.CollectionType
-import com.swahilib.core.data.testdoubles.TestNiaNetworkDataSource
+import com.swahilib.core.data.testdoubles.TestAppNetworkDataSource
 import com.swahilib.core.data.testdoubles.TestTopicDao
 import com.swahilib.core.database.dao.TopicDao
 import com.swahilib.core.database.model.TopicEntity
 import com.swahilib.core.database.model.asExternalModel
-import com.swahilib.core.datastore.NiaPreferencesDataSource
+import com.swahilib.core.datastore.AppPreferencesDataSource
 import com.swahilib.core.datastore.UserPreferences
 import com.swahilib.core.datastore.test.InMemoryDataStore
 import com.swahilib.core.model.data.Topic
@@ -29,18 +29,18 @@ class OfflineFirstTopicsRepositoryTest {
 
     private lateinit var topicDao: TopicDao
 
-    private lateinit var network: TestNiaNetworkDataSource
+    private lateinit var network: TestAppNetworkDataSource
 
-    private lateinit var niaPreferences: NiaPreferencesDataSource
+    private lateinit var appPreferences: AppPreferencesDataSource
 
     private lateinit var synchronizer: Synchronizer
 
     @Before
     fun setup() {
         topicDao = TestTopicDao()
-        network = TestNiaNetworkDataSource()
-        niaPreferences = NiaPreferencesDataSource(InMemoryDataStore(UserPreferences.getDefaultInstance()))
-        synchronizer = TestSynchronizer(niaPreferences)
+        network = TestAppNetworkDataSource()
+        appPreferences = AppPreferencesDataSource(InMemoryDataStore(UserPreferences.getDefaultInstance()))
+        synchronizer = TestSynchronizer(appPreferences)
 
         subject = OfflineFirstTopicsRepository(
             topicDao = topicDao,

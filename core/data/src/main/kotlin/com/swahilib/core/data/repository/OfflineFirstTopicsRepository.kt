@@ -8,7 +8,7 @@ import com.swahilib.core.database.model.TopicEntity
 import com.swahilib.core.database.model.asExternalModel
 import com.swahilib.core.datastore.ChangeListVersions
 import com.swahilib.core.model.data.Topic
-import com.swahilib.core.network.NiaNetworkDataSource
+import com.swahilib.core.network.AppNetworkDataSource
 import com.swahilib.core.network.model.NetworkTopic
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -20,7 +20,7 @@ import javax.inject.Inject
  */
 internal class OfflineFirstTopicsRepository @Inject constructor(
     private val topicDao: TopicDao,
-    private val network: NiaNetworkDataSource,
+    private val network: AppNetworkDataSource,
 ) : TopicsRepository {
 
     override fun getTopics(): Flow<List<Topic>> =

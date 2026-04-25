@@ -1,7 +1,7 @@
 package com.swahilib.core.data.repository
 
 import com.swahilib.core.common.network.Dispatcher
-import com.swahilib.core.common.network.NiaDispatchers.IO
+import com.swahilib.core.common.network.AppDispatchers.IO
 import com.swahilib.core.database.dao.NewsResourceDao
 import com.swahilib.core.database.dao.NewsResourceFtsDao
 import com.swahilib.core.database.dao.TopicDao

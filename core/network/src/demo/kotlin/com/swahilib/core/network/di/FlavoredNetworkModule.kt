@@ -1,7 +1,7 @@
 package com.swahilib.core.network.di
 
-import com.swahilib.core.network.NiaNetworkDataSource
-import com.swahilib.core.network.demo.DemoNiaNetworkDataSource
+import com.swahilib.core.network.AppNetworkDataSource
+import com.swahilib.core.network.demo.DemoAppNetworkDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -12,5 +12,5 @@ import dagger.hilt.components.SingletonComponent
 internal interface FlavoredNetworkModule {
 
     @Binds
-    fun binds(impl: DemoNiaNetworkDataSource): NiaNetworkDataSource
+    fun binds(impl: DemoAppNetworkDataSource): AppNetworkDataSource
 }

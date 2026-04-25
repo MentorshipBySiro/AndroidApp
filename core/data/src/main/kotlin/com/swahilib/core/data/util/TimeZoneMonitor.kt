@@ -8,7 +8,7 @@ import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import androidx.tracing.trace
 import com.swahilib.core.common.network.Dispatcher
-import com.swahilib.core.common.network.NiaDispatchers.IO
+import com.swahilib.core.common.network.AppDispatchers.IO
 import com.swahilib.core.common.network.di.ApplicationScope
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineDispatcher

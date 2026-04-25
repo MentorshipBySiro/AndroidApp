@@ -1,11 +1,11 @@
 package com.swahilib.core.data.test.repository
 
 import com.swahilib.core.common.network.Dispatcher
-import com.swahilib.core.common.network.NiaDispatchers.IO
+import com.swahilib.core.common.network.AppDispatchers.IO
 import com.swahilib.core.data.Synchronizer
 import com.swahilib.core.data.repository.TopicsRepository
 import com.swahilib.core.model.data.Topic
-import com.swahilib.core.network.demo.DemoNiaNetworkDataSource
+import com.swahilib.core.network.demo.DemoAppNetworkDataSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -22,7 +22,7 @@ import javax.inject.Inject
  */
 internal class FakeTopicsRepository @Inject constructor(
     @Dispatcher(IO) private val ioDispatcher: CoroutineDispatcher,
-    private val datasource: DemoNiaNetworkDataSource,
+    private val datasource: DemoAppNetworkDataSource,
 ) : TopicsRepository {
     override fun getTopics(): Flow<List<Topic>> = flow {
         emit(

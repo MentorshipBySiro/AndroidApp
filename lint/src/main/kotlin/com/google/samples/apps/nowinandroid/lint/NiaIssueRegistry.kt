@@ -5,7 +5,7 @@ import com.android.tools.lint.client.api.Vendor
 import com.android.tools.lint.detector.api.CURRENT_API
 import com.swahilib.lint.designsystem.DesignSystemDetector
 
-class NiaIssueRegistry : IssueRegistry() {
+class AppIssueRegistry : IssueRegistry() {
 
     override val issues = listOf(
         DesignSystemDetector.ISSUE,

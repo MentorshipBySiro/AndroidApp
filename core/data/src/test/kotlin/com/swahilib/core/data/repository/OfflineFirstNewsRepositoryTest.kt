@@ -6,7 +6,7 @@ import com.swahilib.core.data.model.topicCrossReferences
 import com.swahilib.core.data.model.topicEntityShells
 import com.swahilib.core.data.testdoubles.CollectionType
 import com.swahilib.core.data.testdoubles.TestNewsResourceDao
-import com.swahilib.core.data.testdoubles.TestNiaNetworkDataSource
+import com.swahilib.core.data.testdoubles.TestAppNetworkDataSource
 import com.swahilib.core.data.testdoubles.TestTopicDao
 import com.swahilib.core.data.testdoubles.filteredInterestsIds
 import com.swahilib.core.data.testdoubles.nonPresentInterestsIds
@@ -15,7 +15,7 @@ import com.swahilib.core.database.model.NewsResourceTopicCrossRef
 import com.swahilib.core.database.model.PopulatedNewsResource
 import com.swahilib.core.database.model.TopicEntity
 import com.swahilib.core.database.model.asExternalModel
-import com.swahilib.core.datastore.NiaPreferencesDataSource
+import com.swahilib.core.datastore.AppPreferencesDataSource
 import com.swahilib.core.datastore.UserPreferences
 import com.swahilib.core.datastore.test.InMemoryDataStore
 import com.swahilib.core.model.data.NewsResource
@@ -38,13 +38,13 @@ class OfflineFirstNewsRepositoryTest {
 
     private lateinit var subject: OfflineFirstNewsRepository
 
-    private lateinit var niaPreferencesDataSource: NiaPreferencesDataSource
+    private lateinit var appPreferencesDataSource: AppPreferencesDataSource
 
     private lateinit var newsResourceDao: TestNewsResourceDao
 
     private lateinit var topicDao: TestTopicDao
 
-    private lateinit var network: TestNiaNetworkDataSource
+    private lateinit var network: TestAppNetworkDataSource
 
     private lateinit var notifier: TestNotifier
 
@@ -52,17 +52,17 @@ class OfflineFirstNewsRepositoryTest {
 
     @Before
     fun setup() {
-        niaPreferencesDataSource = NiaPreferencesDataSource(InMemoryDataStore(UserPreferences.getDefaultInstance()))
+        appPreferencesDataSource = AppPreferencesDataSource(InMemoryDataStore(UserPreferences.getDefaultInstance()))
         newsResourceDao = TestNewsResourceDao()
         topicDao = TestTopicDao()
-        network = TestNiaNetworkDataSource()
+        network = TestAppNetworkDataSource()
         notifier = TestNotifier()
         synchronizer = TestSynchronizer(
-            niaPreferencesDataSource,
+            appPreferencesDataSource,
         )
 
         subject = OfflineFirstNewsRepository(
-            niaPreferencesDataSource = niaPreferencesDataSource,
+            appPreferencesDataSource = appPreferencesDataSource,
             newsResourceDao = newsResourceDao,
             topicDao = topicDao,
             network = network,
@@ -116,7 +116,7 @@ class OfflineFirstNewsRepositoryTest {
     fun offlineFirstNewsRepository_sync_pulls_from_network() =
         testScope.runTest {
             // User has not onboarded
-            niaPreferencesDataSource.setShouldHideOnboarding(false)
+            appPreferencesDataSource.setShouldHideOnboarding(false)
             subject.syncWith(synchronizer)
 
             val newsResourcesFromNetwork = network.getNewsResources()
@@ -146,7 +146,7 @@ class OfflineFirstNewsRepositoryTest {
     fun offlineFirstNewsRepository_sync_deletes_items_marked_deleted_on_network() =
         testScope.runTest {
             // User has not onboarded
-            niaPreferencesDataSource.setShouldHideOnboarding(false)
+            appPreferencesDataSource.setShouldHideOnboarding(false)
 
             val newsResourcesFromNetwork = network.getNewsResources()
                 .map(NetworkNewsResource::asEntity)
@@ -193,7 +193,7 @@ class OfflineFirstNewsRepositoryTest {
     fun offlineFirstNewsRepository_incremental_sync_pulls_from_network() =
         testScope.runTest {
             // User has not onboarded
-            niaPreferencesDataSource.setShouldHideOnboarding(false)
+            appPreferencesDataSource.setShouldHideOnboarding(false)
 
             // Set news version to 7
             synchronizer.updateChangeListVersions {
@@ -274,7 +274,7 @@ class OfflineFirstNewsRepositoryTest {
 
             assertEquals(
                 network.getNewsResources().map { it.id }.toSet(),
-                niaPreferencesDataSource.userData.first().viewedNewsResources,
+                appPreferencesDataSource.userData.first().viewedNewsResources,
             )
         }
 
@@ -290,7 +290,7 @@ class OfflineFirstNewsRepositoryTest {
 
             assertEquals(
                 emptySet(),
-                niaPreferencesDataSource.userData.first().viewedNewsResources,
+                appPreferencesDataSource.userData.first().viewedNewsResources,
             )
         }
 
@@ -298,7 +298,7 @@ class OfflineFirstNewsRepositoryTest {
     fun offlineFirstNewsRepository_sends_notifications_for_newly_synced_news_that_is_followed() =
         testScope.runTest {
             // User has onboarded
-            niaPreferencesDataSource.setShouldHideOnboarding(true)
+            appPreferencesDataSource.setShouldHideOnboarding(true)
 
             val networkNewsResources = network.getNewsResources()
 
@@ -314,7 +314,7 @@ class OfflineFirstNewsRepositoryTest {
                 .toSet()
 
             // Set followed topics
-            niaPreferencesDataSource.setFollowedTopicIds(followedTopicIds)
+            appPreferencesDataSource.setFollowedTopicIds(followedTopicIds)
 
             subject.syncWith(synchronizer)
 
@@ -335,7 +335,7 @@ class OfflineFirstNewsRepositoryTest {
     fun offlineFirstNewsRepository_does_not_send_notifications_for_existing_news_resources() =
         testScope.runTest {
             // User has onboarded
-            niaPreferencesDataSource.setShouldHideOnboarding(true)
+            appPreferencesDataSource.setShouldHideOnboarding(true)
 
             val networkNewsResources = network.getNewsResources()
                 .map(NetworkNewsResource::asEntity)
@@ -352,7 +352,7 @@ class OfflineFirstNewsRepositoryTest {
                 .toSet()
 
             // Follow all topics
-            niaPreferencesDataSource.setFollowedTopicIds(followedTopicIds)
+            appPreferencesDataSource.setFollowedTopicIds(followedTopicIds)
 
             subject.syncWith(synchronizer)
 

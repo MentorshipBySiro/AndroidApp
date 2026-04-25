@@ -5,9 +5,9 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onRoot
 import com.github.takahirom.roborazzi.captureRoboImage
-import com.swahilib.core.designsystem.component.NiaLoadingWheel
-import com.swahilib.core.designsystem.component.NiaOverlayLoadingWheel
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.component.AppLoadingWheel
+import com.swahilib.core.designsystem.component.AppOverlayLoadingWheel
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.testing.util.DefaultRoborazziOptions
 import com.swahilib.core.testing.util.captureMultiTheme
 import dagger.hilt.android.testing.HiltTestApplication
@@ -32,7 +32,7 @@ class LoadingWheelScreenshotTests {
     fun loadingWheel_multipleThemes() {
         composeTestRule.captureMultiTheme("LoadingWheel") {
             Surface {
-                NiaLoadingWheel(contentDesc = "test")
+                AppLoadingWheel(contentDesc = "test")
             }
         }
     }
@@ -41,7 +41,7 @@ class LoadingWheelScreenshotTests {
     fun overlayLoadingWheel_multipleThemes() {
         composeTestRule.captureMultiTheme("LoadingWheel", "OverlayLoadingWheel") {
             Surface {
-                NiaOverlayLoadingWheel(contentDesc = "test")
+                AppOverlayLoadingWheel(contentDesc = "test")
             }
         }
     }
@@ -50,8 +50,8 @@ class LoadingWheelScreenshotTests {
     fun loadingWheelAnimation() {
         composeTestRule.mainClock.autoAdvance = false
         composeTestRule.setContent {
-            NiaTheme {
-                NiaLoadingWheel(contentDesc = "")
+            AppTheme {
+                AppLoadingWheel(contentDesc = "")
             }
         }
         // Try multiple frames of the animation; some arbitrary, some synchronized with duration.

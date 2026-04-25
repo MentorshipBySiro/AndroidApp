@@ -6,7 +6,7 @@ plugins {
 
 android {
     defaultConfig {
-        testInstrumentationRunner = "com.swahilib.core.testing.NiaTestRunner"
+        testInstrumentationRunner = "com.swahilib.core.testing.AppTestRunner"
     }
     namespace = "com.swahilib.sync"
 }

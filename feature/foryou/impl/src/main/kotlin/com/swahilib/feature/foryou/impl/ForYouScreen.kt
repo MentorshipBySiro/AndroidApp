@@ -70,15 +70,15 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionStatus.Denied
 import com.google.accompanist.permissions.rememberPermissionState
 import com.swahilib.core.designsystem.component.DynamicAsyncImage
-import com.swahilib.core.designsystem.component.NiaButton
-import com.swahilib.core.designsystem.component.NiaIconToggleButton
-import com.swahilib.core.designsystem.component.NiaOverlayLoadingWheel
+import com.swahilib.core.designsystem.component.AppButton
+import com.swahilib.core.designsystem.component.AppIconToggleButton
+import com.swahilib.core.designsystem.component.AppOverlayLoadingWheel
 import com.swahilib.core.designsystem.component.scrollbar.DecorativeScrollbar
 import com.swahilib.core.designsystem.component.scrollbar.DraggableScrollbar
 import com.swahilib.core.designsystem.component.scrollbar.rememberDraggableScroller
 import com.swahilib.core.designsystem.component.scrollbar.scrollbarState
-import com.swahilib.core.designsystem.icon.NiaIcons
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.icon.AppIcons
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.model.data.UserNewsResource
 import com.swahilib.core.ui.DevicePreviews
 import com.swahilib.core.ui.NewsFeedUiState
@@ -185,7 +185,7 @@ internal fun ForYouScreen(
                 Column {
                     Spacer(modifier = Modifier.height(8.dp))
                     // Add space for the content to clear the "offline" snackbar.
-                    // TODO: Check that the Scaffold handles this correctly in NiaApp
+                    // TODO: Check that the Scaffold handles this correctly in MainApp
                     // if (isOffline) Spacer(modifier = Modifier.height(48.dp))
                     Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.safeDrawing))
                 }
@@ -206,7 +206,7 @@ internal fun ForYouScreen(
                     .fillMaxWidth()
                     .padding(top = 8.dp),
             ) {
-                NiaOverlayLoadingWheel(
+                AppOverlayLoadingWheel(
                     modifier = Modifier
                         .align(Alignment.Center),
                     contentDesc = loadingContentDescription,
@@ -280,7 +280,7 @@ private fun LazyStaggeredGridScope.onboarding(
                         horizontalArrangement = Arrangement.Center,
                         modifier = Modifier.fillMaxWidth(),
                     ) {
-                        NiaButton(
+                        AppButton(
                             onClick = saveFollowedTopics,
                             enabled = onboardingUiState.isDismissable,
                             modifier = Modifier
@@ -392,18 +392,18 @@ private fun SingleTopicButton(
                     .weight(1f),
                 color = MaterialTheme.colorScheme.onSurface,
             )
-            NiaIconToggleButton(
+            AppIconToggleButton(
                 checked = isSelected,
                 onCheckedChange = { checked -> onClick(topicId, checked) },
                 icon = {
                     Icon(
-                        imageVector = NiaIcons.Add,
+                        imageVector = AppIcons.Add,
                         contentDescription = name,
                     )
                 },
                 checkedIcon = {
                     Icon(
-                        imageVector = NiaIcons.Check,
+                        imageVector = AppIcons.Check,
                         contentDescription = name,
                     )
                 },
@@ -491,7 +491,7 @@ fun ForYouScreenPopulatedFeed(
     @PreviewParameter(UserNewsResourcePreviewParameterProvider::class)
     userNewsResources: List<UserNewsResource>,
 ) {
-    NiaTheme {
+    AppTheme {
         ForYouScreen(
             isSyncing = false,
             onboardingUiState = OnboardingUiState.NotShown,
@@ -515,7 +515,7 @@ fun ForYouScreenOfflinePopulatedFeed(
     @PreviewParameter(UserNewsResourcePreviewParameterProvider::class)
     userNewsResources: List<UserNewsResource>,
 ) {
-    NiaTheme {
+    AppTheme {
         ForYouScreen(
             isSyncing = false,
             onboardingUiState = OnboardingUiState.NotShown,
@@ -539,7 +539,7 @@ fun ForYouScreenTopicSelection(
     @PreviewParameter(UserNewsResourcePreviewParameterProvider::class)
     userNewsResources: List<UserNewsResource>,
 ) {
-    NiaTheme {
+    AppTheme {
         ForYouScreen(
             isSyncing = false,
             onboardingUiState = OnboardingUiState.Shown(
@@ -563,7 +563,7 @@ fun ForYouScreenTopicSelection(
 @DevicePreviews
 @Composable
 fun ForYouScreenLoading() {
-    NiaTheme {
+    AppTheme {
         ForYouScreen(
             isSyncing = false,
             onboardingUiState = OnboardingUiState.Loading,
@@ -585,7 +585,7 @@ fun ForYouScreenPopulatedAndLoading(
     @PreviewParameter(UserNewsResourcePreviewParameterProvider::class)
     userNewsResources: List<UserNewsResource>,
 ) {
-    NiaTheme {
+    AppTheme {
         ForYouScreen(
             isSyncing = true,
             onboardingUiState = OnboardingUiState.Loading,

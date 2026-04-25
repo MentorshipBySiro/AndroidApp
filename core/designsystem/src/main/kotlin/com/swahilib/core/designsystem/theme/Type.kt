@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.sp
 /**
  * SwahiLib typography.
  */
-internal val NiaTypography = Typography(
+internal val AppTypography = Typography(
     displayLarge = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 57.sp,

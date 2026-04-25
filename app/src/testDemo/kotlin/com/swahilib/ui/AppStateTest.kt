@@ -28,12 +28,12 @@ import org.robolectric.annotation.Config
 import kotlin.test.assertEquals
 
 /**
- * Tests [NiaAppState].
+ * Tests [MainAppState].
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(application = HiltTestApplication::class)
 @HiltAndroidTest
-class NiaAppStateTest {
+class AppAppStateTest {
 
     @get:Rule
     val composeTestRule = createComposeRule()
@@ -47,7 +47,7 @@ class NiaAppStateTest {
         CompositeUserNewsResourceRepository(TestNewsRepository(), TestUserDataRepository())
 
     // Subject under test.
-    private lateinit var state: NiaAppState
+    private lateinit var state: MainAppState
 
     private fun testNavigationState() = NavigationState(
         startKey = ForYouNavKey,
@@ -59,13 +59,13 @@ class NiaAppStateTest {
     )
 
     @Test
-    fun niaAppState_currentDestination() = runTest {
+    fun appAppState_currentDestination() = runTest {
         val navigationState = testNavigationState()
         val navigator = Navigator(navigationState)
 
         composeTestRule.setContent {
             state = remember(navigationState) {
-                NiaAppState(
+                MainAppState(
                     coroutineScope = backgroundScope,
                     networkMonitor = networkMonitor,
                     userNewsResourceRepository = userNewsResourceRepository,
@@ -88,9 +88,9 @@ class NiaAppStateTest {
     }
 
     @Test
-    fun niaAppState_destinations() = runTest {
+    fun appAppState_destinations() = runTest {
         composeTestRule.setContent {
-            state = rememberNiaAppState(
+            state = rememberAppAppState(
                 networkMonitor = networkMonitor,
                 userNewsResourceRepository = userNewsResourceRepository,
                 timeZoneMonitor = timeZoneMonitor,
@@ -107,9 +107,9 @@ class NiaAppStateTest {
     }
 
     @Test
-    fun niaAppState_whenNetworkMonitorIsOffline_StateIsOffline() = runTest(UnconfinedTestDispatcher()) {
+    fun appAppState_whenNetworkMonitorIsOffline_StateIsOffline() = runTest(UnconfinedTestDispatcher()) {
         composeTestRule.setContent {
-            state = NiaAppState(
+            state = MainAppState(
                 coroutineScope = backgroundScope,
                 networkMonitor = networkMonitor,
                 userNewsResourceRepository = userNewsResourceRepository,
@@ -127,9 +127,9 @@ class NiaAppStateTest {
     }
 
     @Test
-    fun niaAppState_differentTZ_withTimeZoneMonitorChange() = runTest(UnconfinedTestDispatcher()) {
+    fun appAppState_differentTZ_withTimeZoneMonitorChange() = runTest(UnconfinedTestDispatcher()) {
         composeTestRule.setContent {
-            state = NiaAppState(
+            state = MainAppState(
                 coroutineScope = backgroundScope,
                 networkMonitor = networkMonitor,
                 userNewsResourceRepository = userNewsResourceRepository,

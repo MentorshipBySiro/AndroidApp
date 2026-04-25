@@ -7,8 +7,8 @@ import com.google.android.apps.common.testing.accessibility.framework.Accessibil
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityCheckResultUtils.matchesElements
 import com.google.android.apps.common.testing.accessibility.framework.checks.TextContrastCheck
 import com.google.android.apps.common.testing.accessibility.framework.matcher.ElementMatchers.withText
-import com.swahilib.core.designsystem.component.NiaBackground
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.component.AppBackground
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.testing.util.DefaultTestDevices
 import com.swahilib.core.testing.util.captureForDevice
 import com.swahilib.core.testing.util.captureMultiDevice
@@ -55,7 +55,7 @@ class ForYouScreenScreenshotTests {
     @Test
     fun forYouScreenPopulatedFeed() {
         composeTestRule.captureMultiDevice("ForYouScreenPopulatedFeed") {
-            NiaTheme {
+            AppTheme {
                 ForYouScreen(
                     isSyncing = false,
                     onboardingUiState = NotShown,
@@ -77,7 +77,7 @@ class ForYouScreenScreenshotTests {
     @Test
     fun forYouScreenLoading() {
         composeTestRule.captureMultiDevice("ForYouScreenLoading") {
-            NiaTheme {
+            AppTheme {
                 ForYouScreen(
                     isSyncing = false,
                     onboardingUiState = OnboardingUiState.Loading,
@@ -147,8 +147,8 @@ class ForYouScreenScreenshotTests {
 
     @Composable
     private fun ForYouScreenTopicSelection() {
-        NiaTheme {
-            NiaBackground {
+        AppTheme {
+            AppBackground {
                 ForYouScreen(
                     isSyncing = false,
                     onboardingUiState = Shown(
@@ -172,9 +172,9 @@ class ForYouScreenScreenshotTests {
 
     @Composable
     private fun ForYouScreenPopulatedAndLoading() {
-        NiaTheme {
-            NiaBackground {
-                NiaTheme {
+        AppTheme {
+            AppBackground {
+                AppTheme {
                     ForYouScreen(
                         isSyncing = true,
                         onboardingUiState = OnboardingUiState.Loading,

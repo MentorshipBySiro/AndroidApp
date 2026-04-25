@@ -40,8 +40,8 @@ import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
-import com.swahilib.core.designsystem.component.NiaTextButton
-import com.swahilib.core.designsystem.theme.NiaTheme
+import com.swahilib.core.designsystem.component.AppTextButton
+import com.swahilib.core.designsystem.theme.AppTheme
 import com.swahilib.core.designsystem.theme.supportsDynamicTheming
 import com.swahilib.core.model.data.DarkThemeConfig
 import com.swahilib.core.model.data.DarkThemeConfig.DARK
@@ -125,7 +125,7 @@ fun SettingsDialog(
             TrackScreenViewEvent(screenName = "Settings")
         },
         confirmButton = {
-            NiaTextButton(
+            AppTextButton(
                 onClick = onDismiss,
                 modifier = Modifier.padding(horizontal = 8.dp),
             ) {
@@ -244,25 +244,25 @@ private fun LinksPanel() {
         modifier = Modifier.fillMaxWidth(),
     ) {
         val uriHandler = LocalUriHandler.current
-        NiaTextButton(
+        AppTextButton(
             onClick = { uriHandler.openUri(PRIVACY_POLICY_URL) },
         ) {
             Text(text = stringResource(string.feature_settings_impl_privacy_policy))
         }
         val context = LocalContext.current
-        NiaTextButton(
+        AppTextButton(
             onClick = {
                 context.startActivity(Intent(context, OssLicensesMenuActivity::class.java))
             },
         ) {
             Text(text = stringResource(string.feature_settings_impl_licenses))
         }
-        NiaTextButton(
+        AppTextButton(
             onClick = { uriHandler.openUri(BRAND_GUIDELINES_URL) },
         ) {
             Text(text = stringResource(string.feature_settings_impl_brand_guidelines))
         }
-        NiaTextButton(
+        AppTextButton(
             onClick = { uriHandler.openUri(FEEDBACK_URL) },
         ) {
             Text(text = stringResource(string.feature_settings_impl_feedback))
@@ -273,7 +273,7 @@ private fun LinksPanel() {
 @Preview
 @Composable
 private fun PreviewSettingsDialog() {
-    NiaTheme {
+    AppTheme {
         SettingsDialog(
             onDismiss = {},
             settingsUiState = Success(
@@ -293,7 +293,7 @@ private fun PreviewSettingsDialog() {
 @Preview
 @Composable
 private fun PreviewSettingsDialogLoading() {
-    NiaTheme {
+    AppTheme {
         SettingsDialog(
             onDismiss = {},
             settingsUiState = Loading,

@@ -1,7 +1,7 @@
 package com.swahilib.core.data.testdoubles
 
-import com.swahilib.core.network.NiaNetworkDataSource
-import com.swahilib.core.network.demo.DemoNiaNetworkDataSource
+import com.swahilib.core.network.AppNetworkDataSource
+import com.swahilib.core.network.demo.DemoAppNetworkDataSource
 import com.swahilib.core.network.model.NetworkChangeList
 import com.swahilib.core.network.model.NetworkNewsResource
 import com.swahilib.core.network.model.NetworkTopic
@@ -15,11 +15,11 @@ enum class CollectionType {
 }
 
 /**
- * Test double for [NiaNetworkDataSource]
+ * Test double for [AppNetworkDataSource]
  */
-class TestNiaNetworkDataSource : NiaNetworkDataSource {
+class TestAppNetworkDataSource : AppNetworkDataSource {
 
-    private val source = DemoNiaNetworkDataSource(
+    private val source = DemoAppNetworkDataSource(
         UnconfinedTestDispatcher(),
         Json { ignoreUnknownKeys = true },
     )

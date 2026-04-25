@@ -11,9 +11,9 @@ import com.swahilib.core.database.model.PopulatedNewsResource
 import com.swahilib.core.database.model.TopicEntity
 import com.swahilib.core.database.model.asExternalModel
 import com.swahilib.core.datastore.ChangeListVersions
-import com.swahilib.core.datastore.NiaPreferencesDataSource
+import com.swahilib.core.datastore.AppPreferencesDataSource
 import com.swahilib.core.model.data.NewsResource
-import com.swahilib.core.network.NiaNetworkDataSource
+import com.swahilib.core.network.AppNetworkDataSource
 import com.swahilib.core.network.model.NetworkNewsResource
 import com.swahilib.core.notifications.Notifier
 import kotlinx.coroutines.flow.Flow
@@ -30,10 +30,10 @@ private const val SYNC_BATCH_SIZE = 40
  * Reads are exclusively from local storage to support offline access.
  */
 internal class OfflineFirstNewsRepository @Inject constructor(
-    private val niaPreferencesDataSource: NiaPreferencesDataSource,
+    private val appPreferencesDataSource: AppPreferencesDataSource,
     private val newsResourceDao: NewsResourceDao,
     private val topicDao: TopicDao,
-    private val network: NiaNetworkDataSource,
+    private val network: AppNetworkDataSource,
     private val notifier: Notifier,
 ) : NewsRepository {
 
@@ -60,7 +60,7 @@ internal class OfflineFirstNewsRepository @Inject constructor(
             },
             modelDeleter = newsResourceDao::deleteNewsResources,
             modelUpdater = { changedIds ->
-                val userData = niaPreferencesDataSource.userData.first()
+                val userData = appPreferencesDataSource.userData.first()
                 val hasOnboarded = userData.shouldHideOnboarding
                 val followedTopicIds = userData.followedTopics
 
@@ -80,7 +80,7 @@ internal class OfflineFirstNewsRepository @Inject constructor(
                 if (isFirstSync) {
                     // When we first retrieve news, mark everything viewed, so that we aren't
                     // overwhelmed with all historical news.
-                    niaPreferencesDataSource.setNewsResourcesViewed(changedIds, true)
+                    appPreferencesDataSource.setNewsResourcesViewed(changedIds, true)
                 }
 
                 // Obtain the news resources which have changed from the network and upsert them locally
